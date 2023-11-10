@@ -11,7 +11,7 @@ namespace THSSBS.Web.Modules.IsGuvenligiEgitimi
 {
 
 
-    public partial class MF_OrtamEtkenleriTanim
+    public partial class OrtamEtkenleriTanim
     {
 
         /// <summary>
@@ -60,13 +60,13 @@ namespace THSSBS.Web.Modules.IsGuvenligiEgitimi
         protected global::System.Web.UI.WebControls.DropDownList drpOrtamEtkenleri;
 
         /// <summary>
-        /// RequiredOrtamEtkeni control.
+        /// requiredOrtamEtkenleri control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredOrtamEtkeni;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredOrtamEtkenleri;
 
         /// <summary>
         /// txtOlcumTarihi control.
@@ -96,13 +96,13 @@ namespace THSSBS.Web.Modules.IsGuvenligiEgitimi
         protected global::System.Web.UI.WebControls.TextBox txtOlcumSonucu;
 
         /// <summary>
-        /// RequiredOlcumSonucu control.
+        /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredOlcumSonucu;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
         /// btnKaydet control.
