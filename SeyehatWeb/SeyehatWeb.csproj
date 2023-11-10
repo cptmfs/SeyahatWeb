@@ -284,6 +284,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="Ferit.aspx" />
     <Content Include="Galeri.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Iletisim.aspx" />
@@ -559,6 +560,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ferit.aspx.cs">
+      <DependentUpon>Ferit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ferit.aspx.designer.cs">
+      <DependentUpon>Ferit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Galeri.aspx.cs">
       <DependentUpon>Galeri.aspx</DependentUpon>
