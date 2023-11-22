@@ -11,44 +11,35 @@ namespace SeyehatWeb.Yönetim
 {
 
 
-    public partial class PaketEkle
+    public partial class GaleriEkleSil
     {
 
         /// <summary>
-        /// txtTurAd control.
+        /// txtAd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurAd;
+        protected global::System.Web.UI.WebControls.TextBox txtAd;
 
         /// <summary>
-        /// txtTurFiyat control.
+        /// btnKaydet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurFiyat;
+        protected global::System.Web.UI.WebControls.Button btnKaydet;
 
         /// <summary>
-        /// txtTurSure control.
+        /// DropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurSure;
-
-        /// <summary>
-        /// txtTurKonum control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurKonum;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
         /// FileUpload1 control.
@@ -67,32 +58,5 @@ namespace SeyehatWeb.Yönetim
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
-        /// lblResim control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResim;
-
-        /// <summary>
-        /// txtTurDetay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurDetay;
-
-        /// <summary>
-        /// btnKaydet control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnKaydet;
     }
 }

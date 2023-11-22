@@ -7,102 +7,102 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace THSSBS.Web.Modules.IsGuvenligiEgitimi
+namespace SeyehatWeb.Yönetim
 {
 
 
-    public partial class OrtamEtkenleriTanim
+    public partial class Ayarlar
     {
 
         /// <summary>
-        /// txtOrtamEtkenleriArama control.
+        /// txtMail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOrtamEtkenleriArama;
+        protected global::System.Web.UI.WebControls.TextBox txtMail;
 
         /// <summary>
-        /// btnAra control.
+        /// txtTelefon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAra;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefon;
 
         /// <summary>
-        /// gridOrtamEtkenleri control.
+        /// txtAdress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridOrtamEtkenleri;
+        protected global::System.Web.UI.WebControls.TextBox txtAdress;
 
         /// <summary>
-        /// hiddenSecilenOrtamEtkenleriId control.
+        /// txtTwitter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hiddenSecilenOrtamEtkenleriId;
+        protected global::System.Web.UI.WebControls.TextBox txtTwitter;
 
         /// <summary>
-        /// drpOrtamEtkenleri control.
+        /// txtYoutube control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpOrtamEtkenleri;
+        protected global::System.Web.UI.WebControls.TextBox txtYoutube;
 
         /// <summary>
-        /// requiredOrtamEtkenleri control.
+        /// txtInstagram control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredOrtamEtkenleri;
+        protected global::System.Web.UI.WebControls.TextBox txtInstagram;
 
         /// <summary>
-        /// txtOlcumTarihi control.
+        /// txtFacebook control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOlcumTarihi;
+        protected global::System.Web.UI.WebControls.TextBox txtFacebook;
 
         /// <summary>
-        /// RequiredTarih control.
+        /// FileUpload1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredTarih;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
 
         /// <summary>
-        /// txtOlcumSonucu control.
+        /// txtBlogDetay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOlcumSonucu;
+        protected global::System.Web.UI.WebControls.TextBox txtBlogDetay;
 
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// lblTarih control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.Label lblTarih;
 
         /// <summary>
         /// btnKaydet control.
@@ -112,23 +112,5 @@ namespace THSSBS.Web.Modules.IsGuvenligiEgitimi
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnKaydet;
-
-        /// <summary>
-        /// btnGuncelle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuncelle;
-
-        /// <summary>
-        /// btnSil control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSil;
     }
 }
