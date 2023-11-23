@@ -45,13 +45,13 @@ namespace SeyehatWeb.Yönetim
         {
             SqlConnection baglanti = new SqlConnection(congBaglanti);
             baglanti.Open();
-            SqlCommand cmd = new SqlCommand("Insert into tblTurPaket(Baslik,Ozet,KategoriId,Resim,Detay,Tarih) values (@Baslik,@Ozet,@KategoriId,@Resim,@Detay,@Tarih)", baglanti);
+            SqlCommand cmd = new SqlCommand("Insert into tblBlog(Baslik,Ozet,KategoriId,Resim,Detay,Tarih) values (@Baslik,@Ozet,@KategoriId,@Resim,@Detay,@Tarih)", baglanti);
             cmd.Parameters.AddWithValue("@Baslik", txtBaslik.Text.ToString());
             cmd.Parameters.AddWithValue("@Ozet", txtOzet.Text.ToString());
             cmd.Parameters.AddWithValue("@KategoriId", DropDownList1.SelectedValue);
             cmd.Parameters.AddWithValue("@Resim", lblResim.Text.ToString());
             cmd.Parameters.AddWithValue("@Detay", txtBlogDetay.Text.ToString());
-            cmd.Parameters.AddWithValue("@Tarih", lblTarih.Text.ToString());
+            cmd.Parameters.AddWithValue("@Tarih", Convert.ToDateTime(lblTarih.Text.ToString()));
             cmd.ExecuteNonQuery();
             baglanti.Close();
             Response.Redirect("BlogDuzenleSil.aspx");

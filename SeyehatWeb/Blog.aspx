@@ -12,31 +12,53 @@
     <div class="row">
         <div class="col-lg-8 mb-5 mb-lg-0">
             <div class="blog_left_sidebar">
-                <article class="blog_item">
-                    <div class="blog_item_img">
-                        <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
-                        <a href="#" class="blog_item_date">
-                            <h3>15</h3>
-                            <p>Jan</p>
-                        </a>
-                    </div>
 
-                    <div class="blog_details">
-                        <a class="d-inline-block" href="single-blog.html">
-                            <h2>Google inks pact for new 35-storey office</h2>
-                        </a>
-                        <p>
-                            That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.
-                        </p>
-                        <ul class="blog-info-link">
-                            <li><a href="#"><i class="fa fa-user"></i>Travel, Lifestyle</a></li>
-                            <li><a href="#"><i class="fa fa-comments"></i>03 Comments</a></li>
-                        </ul>
-                    </div>
-                </article>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:dbGoTripConnectionString %>" SelectCommand="SELECT * FROM [tblBlog] inner join tblBlogKategori on tblBlogKategori.Id=tblBlog.KategoriId"></asp:SqlDataSource>
+                <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" DataKeyField="Id">
+                    <ItemTemplate>
+                    <%--    Id:
+                        <asp:Label Text='<%# Eval("Id") %>' runat="server" ID="IdLabel" /><br />
+                        Baslik:
+                        <asp:Label Text='<%# Eval("Baslik") %>' runat="server" ID="BaslikLabel" /><br />
+                        Ozet:
+                        <asp:Label Text='<%# Eval("Ozet") %>' runat="server" ID="OzetLabel" /><br />
+                        KategoriId:
+                        <asp:Label Text='<%# Eval("KategoriId") %>' runat="server" ID="KategoriIdLabel" /><br />
+                        Resim:
+                        <asp:Label Text='<%# Eval("Resim") %>' runat="server" ID="ResimLabel" /><br />
+                        Detay:
+                        <asp:Label Text='<%# Eval("Detay") %>' runat="server" ID="DetayLabel" /><br />
+                        Tarih:
+                        <asp:Label Text='<%# Eval("Tarih") %>' runat="server" ID="TarihLabel" /><br />
+                        <br />--%>
+                                   <article class="blog_item">
+    <div class="blog_item_img">
+        <img class="card-img rounded-0" src='images/blog/<%# Eval("Resim") %>' alt="">
+        <a href="#" class="blog_item_date">
+            <h3>'<%# Eval("Tarih") %>'</h3>
+        </a>
+    </div>
 
-                
+    <div class="blog_details">
+        <a class="d-inline-block" href="single-blog.html">
+            <h2>'<%# Eval("Baslik") %>'</h2>
+        </a>
+        <p>
+           '<%# Eval("Ozet") %>'
+        </p>
+        <ul class="blog-info-link">
+            <li><a href="#"><i class="fa fa-user"></i>'<%# Eval("Ad") %>'</a></li>
+            <li><a href="#"><i class="fa fa-comments"></i>03 Comments</a></li>
+        </ul>
+    </div>
+</article>
+                    </ItemTemplate>
+                </asp:DataList>
+
+
+              
+
+
 
                 <nav class="blog-pagination justify-content-center d-flex">
                     <ul class="pagination">
@@ -81,44 +103,20 @@
                 </aside>
 
                 <aside class="single_sidebar_widget post_category_widget">
-                    <h4 class="widget_title">Category</h4>
+                    <h4 class="widget_title">Kategoriler</h4>
                     <ul class="list cat-list">
-                        <li>
-                            <a href="#" class="d-flex">
-                                <p>Resaurant food</p>
-                                <p>(37)</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="d-flex">
-                                <p>Travel news</p>
-                                <p>(10)</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="d-flex">
-                                <p>Modern technology</p>
-                                <p>(03)</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="d-flex">
-                                <p>Product</p>
-                                <p>(11)</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="d-flex">
-                                <p>Inspiration</p>
-                                <p>21</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="d-flex">
-                                <p>Health Care (21)</p>
-                                <p>09</p>
-                            </a>
-                        </li>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbGoTripConnectionString %>" SelectCommand="SELECT * FROM [tblBlogKategori]"></asp:SqlDataSource>
+                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                            <ItemTemplate>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p><%#Eval ("Ad") %></p>
+                                        <p>(37)</p>
+                                    </a>
+                                </li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    
                     </ul>
                 </aside>
 
