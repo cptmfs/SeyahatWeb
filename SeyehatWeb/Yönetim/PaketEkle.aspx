@@ -32,13 +32,17 @@
                         <label>Tur Resim</label>
                         <input type="file" name="img[]" class="file-upload-default">
                         <asp:FileUpload ID="FileUpload1" CssClass="form-control file-upload-info" runat="server" />
+                        <asp:Button ID="Button1" CssClass="btn btn-gradient-primary mr-2" runat="server" Text="Resim Yükle" OnClick="Button1_Click" />
 
+                    </div>
+                    <div class="form-group">
+                        <asp:Label ID="lblResim" Text="" runat="server"></asp:Label>
                     </div>
                     <div class="form-group">
                         <label for="exampleTextarea1">Detay</label>
                         <asp:TextBox ID="txtTurDetay" CssClass="form-control" TextMode="MultiLine" Height="100px" placeholder="Tur Detay" runat="server"></asp:TextBox>
                     </div>
-                    <asp:Button ID="btnKaydet" CssClass="btn btn-gradient-primary mr-2" runat="server" Text="Kaydet" />
+                    <asp:Button ID="btnKaydet" CssClass="btn btn-gradient-primary mr-2" runat="server" Text="Kaydet" OnClick="btnKaydet_Click" />
                 </form>
             </div>
         </div>

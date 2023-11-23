@@ -11,44 +11,35 @@ namespace SeyehatWeb.Yönetim
 {
 
 
-    public partial class PaketEkle
+    public partial class BlogEkle
     {
 
         /// <summary>
-        /// txtTurAd control.
+        /// txtBaslik control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurAd;
+        protected global::System.Web.UI.WebControls.TextBox txtBaslik;
 
         /// <summary>
-        /// txtTurFiyat control.
+        /// txtOzet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurFiyat;
+        protected global::System.Web.UI.WebControls.TextBox txtOzet;
 
         /// <summary>
-        /// txtTurSure control.
+        /// DropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurSure;
-
-        /// <summary>
-        /// txtTurKonum control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurKonum;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
         /// FileUpload1 control.
@@ -78,13 +69,22 @@ namespace SeyehatWeb.Yönetim
         protected global::System.Web.UI.WebControls.Label lblResim;
 
         /// <summary>
-        /// txtTurDetay control.
+        /// txtBlogDetay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurDetay;
+        protected global::System.Web.UI.WebControls.TextBox txtBlogDetay;
+
+        /// <summary>
+        /// lblTarih control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTarih;
 
         /// <summary>
         /// btnKaydet control.

@@ -11,44 +11,71 @@ namespace SeyehatWeb.Yönetim
 {
 
 
-    public partial class PaketEkle
+    public partial class Ayarlar
     {
 
         /// <summary>
-        /// txtTurAd control.
+        /// txtMail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurAd;
+        protected global::System.Web.UI.WebControls.TextBox txtMail;
 
         /// <summary>
-        /// txtTurFiyat control.
+        /// txtTelefon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurFiyat;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefon;
 
         /// <summary>
-        /// txtTurSure control.
+        /// txtAdress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurSure;
+        protected global::System.Web.UI.WebControls.TextBox txtAdress;
 
         /// <summary>
-        /// txtTurKonum control.
+        /// txtTwitter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurKonum;
+        protected global::System.Web.UI.WebControls.TextBox txtTwitter;
+
+        /// <summary>
+        /// txtYoutube control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtYoutube;
+
+        /// <summary>
+        /// txtInstagram control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtInstagram;
+
+        /// <summary>
+        /// txtFacebook control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFacebook;
 
         /// <summary>
         /// FileUpload1 control.
@@ -60,31 +87,22 @@ namespace SeyehatWeb.Yönetim
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
 
         /// <summary>
-        /// Button1 control.
+        /// txtBlogDetay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox txtBlogDetay;
 
         /// <summary>
-        /// lblResim control.
+        /// lblTarih control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResim;
-
-        /// <summary>
-        /// txtTurDetay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurDetay;
+        protected global::System.Web.UI.WebControls.Label lblTarih;
 
         /// <summary>
         /// btnKaydet control.

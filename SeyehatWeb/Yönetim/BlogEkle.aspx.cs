@@ -9,11 +9,14 @@ using System.Web.UI.WebControls;
 
 namespace SeyehatWeb.Yönetim
 {
-    public partial class PaketEkle : System.Web.UI.Page
+    public partial class BlogEkle : System.Web.UI.Page
     {
+        DateTime bugun = DateTime.Now;
         string congBaglanti = WebConfigurationManager.ConnectionStrings["dbGoTripConnectionString"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblTarih.Text=bugun.ToString(); 
 
         }
 
@@ -21,10 +24,10 @@ namespace SeyehatWeb.Yönetim
         {
             if (FileUpload1.HasFile)
             {
-                if (FileUpload1.PostedFile.ContentType=="image/jpeg" || FileUpload1.PostedFile.ContentType=="image/jpg" || FileUpload1.PostedFile.ContentType == "image/png")
+                if (FileUpload1.PostedFile.ContentType == "image/jpeg" || FileUpload1.PostedFile.ContentType == "image/jpg" || FileUpload1.PostedFile.ContentType == "image/png")
                 {
                     string resimAd = FileUpload1.FileName.ToString();
-                    FileUpload1.SaveAs(Server.MapPath("~/images/"+resimAd));
+                    FileUpload1.SaveAs(Server.MapPath("~/images/blog/" + resimAd));
                     lblResim.Text = resimAd.ToString();
                 }
                 else
@@ -42,16 +45,16 @@ namespace SeyehatWeb.Yönetim
         {
             SqlConnection baglanti = new SqlConnection(congBaglanti);
             baglanti.Open();
-            SqlCommand cmd = new SqlCommand("Insert into tblTurPaket(Adi,Fiyat,Sure,Lokasyon,Resim,Detay) values (@Adi,@Fiyat,@Sure,@Lokasyon,@Resim,@Detay)", baglanti);
-            cmd.Parameters.AddWithValue("@Adi",txtTurAd.Text.ToString());
-            cmd.Parameters.AddWithValue("@Fiyat", Convert.ToInt32(txtTurFiyat.Text.ToString()));
-            cmd.Parameters.AddWithValue("@Sure", Convert.ToInt32(txtTurSure.Text.ToString()));
-            cmd.Parameters.AddWithValue("@Lokasyon", txtTurKonum.Text.ToString());
+            SqlCommand cmd = new SqlCommand("Insert into tblTurPaket(Baslik,Ozet,KategoriId,Resim,Detay,Tarih) values (@Baslik,@Ozet,@KategoriId,@Resim,@Detay,@Tarih)", baglanti);
+            cmd.Parameters.AddWithValue("@Baslik", txtBaslik.Text.ToString());
+            cmd.Parameters.AddWithValue("@Ozet", txtOzet.Text.ToString());
+            cmd.Parameters.AddWithValue("@KategoriId", DropDownList1.SelectedValue);
             cmd.Parameters.AddWithValue("@Resim", lblResim.Text.ToString());
-            cmd.Parameters.AddWithValue("@Detay", txtTurDetay.Text.ToString());
+            cmd.Parameters.AddWithValue("@Detay", txtBlogDetay.Text.ToString());
+            cmd.Parameters.AddWithValue("@Tarih", lblTarih.Text.ToString());
             cmd.ExecuteNonQuery();
             baglanti.Close();
-            Response.Redirect("PaketDuzenleSil.aspx");
+            Response.Redirect("BlogDuzenleSil.aspx");
         }
     }
 }
