@@ -11,7 +11,7 @@
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                             
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbGoTripConnectionString %>" SelectCommand="SELECT * FROM [tblBlogKategori]"></asp:SqlDataSource>
                 <div class="form-group">
                     <label for="exampleInputName1">Başlık</label>
                     <asp:TextBox ID="txtBaslik" CssClass="form-control" placeholder="Başlık" runat="server"></asp:TextBox>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword4">Kategori</label>
-                    <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server" DataSourceID="SqlDataSource1" DataTextField="Ad" DataValueField="Id"></asp:DropDownList>
                 </div>
                 <div class="form-group">
                     <label>Blog Resim</label>
