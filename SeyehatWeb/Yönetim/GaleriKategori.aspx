@@ -10,13 +10,11 @@
 
         <div class="card">
             <div class="card-body">
-                <form class="forms-sample" runat="server">
-                    <div class="form-group">
-                        <label for="exampleInputName1">Kategori Adı</label>
-                        <asp:TextBox ID="txtAd" CssClass="form-control" placeholder="Kategori Adı" runat="server"></asp:TextBox>
-                    </div>
-                    <asp:Button ID="btnKaydet" CssClass="btn btn-gradient-primary mr-2" runat="server" Text="Kategori Ekle" />
-                </form>
+                <div class="form-group">
+                    <label for="exampleInputName1">Kategori Adı</label>
+                    <asp:TextBox ID="txtAd" CssClass="form-control" placeholder="Kategori Adı" runat="server"></asp:TextBox>
+                </div>   
+                <asp:Button ID="btnKaydet" CssClass="btn btn-gradient-primary mr-2" runat="server" Text="Kategori Ekle" OnClick="btnKaydet_Click" />
             </div>
         </div>
     </div>
