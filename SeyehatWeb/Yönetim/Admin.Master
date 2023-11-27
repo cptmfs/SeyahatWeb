@@ -278,7 +278,7 @@
                             <h3 class="page-title">Forms</h3>
                         </asp:ContentPlaceHolder>
                     </div>
-                    <form runat="server">
+                    <form class="forms-sample" runat="server">
                         <div class="row">
                             <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
                             </asp:ContentPlaceHolder>

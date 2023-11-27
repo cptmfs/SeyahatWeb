@@ -6,7 +6,6 @@
     <h3 class="page-title">Tur Paketi Düzenle/Sil Sayfası</h3>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <form runat="server">
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbGoTripConnectionString %>" SelectCommand="SELECT * FROM [tblTurPaket]" DeleteCommand="DELETE FROM [tblTurPaket] WHERE [Id] = @Id" InsertCommand="INSERT INTO [tblTurPaket] ([Id], [Adi], [Fiyat], [Sure], [Lokasyon], [Resim], [Detay]) VALUES (@Id, @Adi, @Fiyat, @Sure, @Lokasyon, @Resim, @Detay)" UpdateCommand="UPDATE [tblTurPaket] SET [Adi] = @Adi, [Fiyat] = @Fiyat, [Sure] = @Sure, [Lokasyon] = @Lokasyon, [Resim] = @Resim, [Detay] = @Detay WHERE [Id] = @Id">
             <DeleteParameters>
                 <asp:Parameter Name="Id" Type="Int32"></asp:Parameter>
@@ -42,5 +41,4 @@
                 <asp:BoundField DataField="Detay" HeaderText="Detay" SortExpression="Detay"></asp:BoundField>
             </Columns>
         </asp:GridView>
-    </form>
 </asp:Content>

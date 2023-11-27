@@ -29,7 +29,12 @@
     </asp:SqlDataSource>
     <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" CssClass="table table-striped" AllowPaging="True" AllowSorting="True">
         <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True"></asp:CommandField>
+            <asp:TemplateField>
+                <ItemTemplate>
+                    <asp:HyperLink ID="HyperLink1" NavigateUrl='<%#Eval("id","BlogDuzenleSecilen.aspx?id={0}") %>' runat="server">Duzenle</asp:HyperLink>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="False"></asp:CommandField>
         </Columns>
     </asp:GridView>
 </asp:Content>

@@ -11,7 +11,6 @@
         <div class="card">
             <div class="card-body">
 
-                <form class="forms-sample" runat="server">
                     <div class="form-group">
                         <label for="exampleInputName1">Tur Adı</label>
                         <asp:TextBox ID="txtTurAd" CssClass="form-control" placeholder="Tur Adı" runat="server"></asp:TextBox>
@@ -43,7 +42,6 @@
                         <asp:TextBox ID="txtTurDetay" CssClass="form-control" TextMode="MultiLine" Height="100px" placeholder="Tur Detay" runat="server"></asp:TextBox>
                     </div>
                     <asp:Button ID="btnKaydet" CssClass="btn btn-gradient-primary mr-2" runat="server" Text="Kaydet" OnClick="btnKaydet_Click" />
-                </form>
             </div>
         </div>
     </div>

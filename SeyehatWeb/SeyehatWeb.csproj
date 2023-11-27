@@ -222,6 +222,7 @@
     <Content Include="assets\img\service\3.png" />
     <Content Include="assets\img\service\footer_bg.jpg" />
     <Content Include="assets\img\service\services1.jpg" />
+    <Content Include="BlogDetay.aspx" />
     <Content Include="images\blog\single_blog_2.png" />
     <Content Include="images\services1.jpg" />
     <Content Include="assets\img\service\services2.jpg" />
@@ -290,6 +291,24 @@
     <Content Include="Global.asax" />
     <Content Include="Iletisim.aspx" />
     <Content Include="Kurumsal.aspx" />
+    <Content Include="LoginPage.aspx" />
+    <Content Include="login_v1\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="login_v1\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="login_v1\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="login_v1\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="login_v1\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="login_v1\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="login_v1\vendor\bootstrap\js\popper.js" />
+    <Content Include="login_v1\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="login_v1\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="login_v1\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="login_v1\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="login_v1\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="login_v1\vendor\select2\select2.css" />
+    <Content Include="login_v1\vendor\select2\select2.js" />
+    <Content Include="login_v1\vendor\select2\select2.min.css" />
+    <Content Include="login_v1\vendor\select2\select2.min.js" />
+    <Content Include="login_v1\vendor\tilt\tilt.jquery.min.js" />
     <Content Include="Paketler.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -421,6 +440,7 @@
     <Content Include="Yönetim\assets\vendors\js\vendor.bundle.addons.js" />
     <Content Include="Yönetim\assets\vendors\js\vendor.bundle.base.js" />
     <Content Include="Yönetim\Ayarlar.aspx" />
+    <Content Include="Yönetim\BlogDuzenleSecilen.aspx" />
     <Content Include="Yönetim\BlogDuzenleSil.aspx" />
     <Content Include="Yönetim\BlogEkle.aspx" />
     <Content Include="Yönetim\BlogKategori.aspx" />
@@ -430,6 +450,11 @@
     <Content Include="Yönetim\Kurumsal.aspx" />
     <Content Include="Yönetim\PaketDuzenleSil.aspx" />
     <Content Include="Yönetim\PaketEkle.aspx" />
+    <Content Include="login_v1\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="login_v1\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="login_v1\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="login_v1\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="login_v1\vendor\bootstrap\css\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -563,6 +588,13 @@
     <Compile Include="Blog.aspx.designer.cs">
       <DependentUpon>Blog.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BlogDetay.aspx.cs">
+      <DependentUpon>BlogDetay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BlogDetay.aspx.designer.cs">
+      <DependentUpon>BlogDetay.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -594,6 +626,13 @@
     <Compile Include="Kurumsal.aspx.designer.cs">
       <DependentUpon>Kurumsal.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paketler.aspx.cs">
       <DependentUpon>Paketler.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -622,6 +661,13 @@
     </Compile>
     <Compile Include="Yönetim\Ayarlar.aspx.designer.cs">
       <DependentUpon>Ayarlar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yönetim\BlogDuzenleSecilen.aspx.cs">
+      <DependentUpon>BlogDuzenleSecilen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yönetim\BlogDuzenleSecilen.aspx.designer.cs">
+      <DependentUpon>BlogDuzenleSecilen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Yönetim\BlogDuzenleSil.aspx.cs">
       <DependentUpon>BlogDuzenleSil.aspx</DependentUpon>
@@ -690,6 +736,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\galeri\" />
+    <Folder Include="login_v1\css\" />
+    <Folder Include="login_v1\fonts\font-awesome-4.7.0\css\" />
+    <Folder Include="login_v1\fonts\font-awesome-4.7.0\fonts\" />
+    <Folder Include="login_v1\fonts\font-awesome-4.7.0\less\" />
+    <Folder Include="login_v1\fonts\font-awesome-4.7.0\scss\" />
+    <Folder Include="login_v1\fonts\montserrat\" />
+    <Folder Include="login_v1\fonts\poppins\" />
+    <Folder Include="login_v1\images\icons\" />
+    <Folder Include="login_v1\js\" />
+    <Folder Include="login_v1\vendor\animate\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

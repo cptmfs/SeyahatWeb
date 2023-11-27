@@ -13,7 +13,7 @@
         <div class="col-lg-8 mb-5 mb-lg-0">
             <div class="blog_left_sidebar">
 
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:dbGoTripConnectionString %>" SelectCommand="SELECT * FROM [tblBlog] inner join tblBlogKategori on tblBlogKategori.Id=tblBlog.KategoriId"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:dbGoTripConnectionString %>" SelectCommand="SELECT * FROM [tblBlog] inner join tblBlogKategori on tblBlogKategori.Id=tblBlog.KategoriId "></asp:SqlDataSource>
                 <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" DataKeyField="Id">
                     <ItemTemplate>
                     <%--    Id:
@@ -34,21 +34,21 @@
                                    <article class="blog_item">
     <div class="blog_item_img">
         <img class="card-img rounded-0" src='images/blog/<%# Eval("Resim") %>' alt="">
-        <a href="#" class="blog_item_date">
+        <a href='<%# Eval ("Id","BlogDetay.aspx?Id={0}") %>' class="blog_item_date">
             <h3>'<%# Eval("Tarih") %>'</h3>
         </a>
     </div>
 
     <div class="blog_details">
-        <a class="d-inline-block" href="single-blog.html">
+        <a class="d-inline-block" href='<%# Eval ("Id","BlogDetay.aspx?Id={0}") %>'>
             <h2>'<%# Eval("Baslik") %>'</h2>
         </a>
         <p>
            '<%# Eval("Ozet") %>'
         </p>
         <ul class="blog-info-link">
-            <li><a href="#"><i class="fa fa-user"></i>'<%# Eval("Ad") %>'</a></li>
-            <li><a href="#"><i class="fa fa-comments"></i>03 Comments</a></li>
+            <li><a href='<%# Eval ("Id","BlogDetay.aspx?Id={0}") %>'><i class="fa fa-user"></i>'<%# Eval("Ad") %>'</a></li>
+            <li><a href='<%# Eval ("Id","BlogDetay.aspx?Id={0}") %>'><i class="fa fa-comments"></i>03 Comments</a></li>
         </ul>
     </div>
 </article>
