@@ -44,24 +44,27 @@
                         </span>
                     </div>
                     <div class="wrap-input100 validate-input" data-validate="Şifre gereklidir">
-                        <asp:TextBox ID="txtPassword" CssClass="input100" placeholder="Password" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtPassword" type="password" CssClass="input100" placeholder="Password" runat="server"></asp:TextBox>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
                     </div>
                     <div class="container-login100-form-btn">
-                        <asp:Button CssClass="login100-form-btn" ID="btnLogin" runat="server" Text="Login" />
+                        <asp:Button CssClass="login100-form-btn" ID="btnLogin" runat="server" Text="Giriş" OnClick="btnLogin_Click" />
 
                     </div>
                     <div class="text-center p-t-12">
-                        <span class="txt1">Forgot
+                        <span class="txt1">Kullanıcı Adı ve Şifre
                         </span>
-                        <a class="txt2" href="#">Username / Password?
+                        <a class="txt2" href="#"> Unuttum
                         </a>
                     </div>
+                    <p>
+                        <asp:Label ID="lblHatalıGiris" runat="server" Text="" style="color:red;"></asp:Label>
+                    </p>
                     <div class="text-center p-t-136">
-                        <a class="txt2" href="#">Create your Account
+                        <a class="txt2" href="#">Yeni Hesap Oluştur
                             <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                         </a>
                     </div>
