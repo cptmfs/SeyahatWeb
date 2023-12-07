@@ -11,19 +11,19 @@ namespace Repository.Modules.Seyehat.UnitOfWork
     {
         #region Fields
     
-    	private readonly dbGoTripEntities _context;
+    	private readonly GoTripEntities _context;
     
         #endregion
     
     	#region Constructors
     
         public SeyehatUnitOfWork() 
-            : this(new dbGoTripEntities()) 
+            : this(new GoTripEntities()) 
         {
     
         }
     
-        public SeyehatUnitOfWork(dbGoTripEntities context) 
+        public SeyehatUnitOfWork(GoTripEntities context) 
         {
             _context = context;
     

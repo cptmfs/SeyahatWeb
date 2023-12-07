@@ -59,7 +59,9 @@
     <Compile Include="Modules\Seyehat\Presenter\TurPaketPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{78A141B5-6E11-4B1F-803F-32A6F703039F}</Project>

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository.Modules.Seyehat.Repository
+namespace Repository.Modules.SeyehatWeb.Repository
 {
     public class KurumsalRepository
     {
@@ -22,7 +22,7 @@ namespace Repository.Modules.Seyehat.Repository
         public KurumsalRepository()
         {
             if (_unitOfWork == null) return;
-                //_unitOfWork = ContainerHelper.Container.Resolve<ISeyehatUnitOfWork>();
+                //_unitOfWork = ContainerHelper.Container.Resolve<ISeyehatWebUnitOfWork>();
         }
 
         #endregion

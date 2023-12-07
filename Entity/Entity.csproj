@@ -92,14 +92,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
     <EntityDeploy Include="Seyehat\Seyehat.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Seyehat.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
     <None Include="Seyehat\Seyehat.edmx.diagram">
       <DependentUpon>Seyehat.edmx</DependentUpon>
     </None>

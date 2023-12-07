@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTO.Modules.Seyehat
+namespace DTO.Modules.SeyehatWeb
 {
     public class BlogKategoriDTO
     {

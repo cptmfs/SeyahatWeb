@@ -1,13 +1,13 @@
-﻿using DTO.Modules.Seyehat;
-using Presenter.Modules.Seyehat.Interface;
-using Service.Modules.Seyehat;
+﻿using DTO.Modules.SeyehatWeb;
+using Presenter.Modules.SeyehatWeb.Interface;
+using Service.Modules.SeyehatWeb;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Presenter.Modules.Seyehat.Presenter
+namespace Presenter.Modules.SeyehatWeb.Presenter
 {
     public class KullaniciPresenter
     {
@@ -41,6 +41,19 @@ namespace Presenter.Modules.Seyehat.Presenter
             View.KullaniciListe = KullaniciService.KullaniciListele();
         }
 
+        public bool KullaniciKontrol(string userName , string password)
+        {
+            var kullanici = KullaniciService.KullaniciFiltrele(userName).FirstOrDefault();
+
+            if (kullanici.Password==password)
+            {
+                 return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 
         public void AramaSonuclariniListele(string userName)

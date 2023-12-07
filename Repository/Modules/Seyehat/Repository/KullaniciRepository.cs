@@ -6,8 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity;
 
-namespace Repository.Modules.Seyehat.Repository
+namespace Repository.Modules.SeyehatWeb.Repository
 {
     public class KullaniciRepository
     {
@@ -21,8 +22,8 @@ namespace Repository.Modules.Seyehat.Repository
 
         public KullaniciRepository()
         {
-            if (_unitOfWork == null) return;
-            //_unitOfWork = ContainerHelper.Container.Resolve<ISeyehatUnitOfWork>();
+            if (_unitOfWork == null)
+            _unitOfWork = ContainerHelper.Container.Resolve<ISeyehatUnitOfWork>();
         }
 
         #endregion

@@ -1,13 +1,13 @@
-﻿using DTO.Modules.Seyehat;
+﻿using DTO.Modules.SeyehatWeb;
 using Entity.Seyehat;
-using Repository.Modules.Seyehat.Repository;
+using Repository.Modules.SeyehatWeb.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service.Modules.Seyehat
+namespace Service.Modules.SeyehatWeb
 {
     public class KullaniciService
     {

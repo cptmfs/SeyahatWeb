@@ -1,11 +1,11 @@
-﻿using DTO.Modules.Seyehat;
+﻿using DTO.Modules.SeyehatWeb;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Presenter.Modules.Seyehat.Interface
+namespace Presenter.Modules.SeyehatWeb.Interface
 {
     public interface IBlogKategoriView
     {

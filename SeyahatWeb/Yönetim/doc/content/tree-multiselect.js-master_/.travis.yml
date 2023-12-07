@@ -1,0 +1,17 @@
+language: node_js
+
+node_js:
+  - 5
+
+before_script:
+  - npm install grunt-cli eslint -g
+
+script:
+  - eslint src/*.js
+  - grunt test-travis --verbose
+
+notifications:
+  email:
+    on_success: never
+
+sudo: false

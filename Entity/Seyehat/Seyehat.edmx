@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="dbGoTripModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GoTripModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tabloKurumsal">
           <Key>
             <PropertyRef Name="Id" />
@@ -150,7 +150,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="dbGoTripModelStoreContainer">
+        <EntityContainer Name="GoTripModelStoreContainer">
           <EntitySet Name="tabloKurumsal" EntityType="Self.tabloKurumsal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAyarlar" EntityType="Self.tblAyarlar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblBlog" EntityType="Self.tblBlog" Schema="dbo" store:Type="Tables" />
@@ -171,7 +171,7 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="dbGoTripModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="GoTripModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="tabloKurumsal">
           <Key>
             <PropertyRef Name="Id" />
@@ -268,6 +268,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -278,7 +279,6 @@
           <Property Name="GuncelleyenKullanici" Type="Int32" />
           <Property Name="GuncellestirilmeTarihi" Type="DateTime" Precision="3" />
           <Property Name="Silindi" Type="Boolean" Nullable="false" />
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="tblTurPaket">
           <Key>
@@ -321,7 +321,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="dbGoTripEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="GoTripEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tabloKurumsal" EntityType="Self.tabloKurumsal" />
           <EntitySet Name="tblAyarlar" EntityType="Self.tblAyarlar" />
           <EntitySet Name="tblBlog" EntityType="Self.tblBlog" />
@@ -344,9 +344,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="dbGoTripModelStoreContainer" CdmEntityContainer="dbGoTripEntities">
+        <EntityContainerMapping StorageEntityContainer="GoTripModelStoreContainer" CdmEntityContainer="GoTripEntities">
           <EntitySetMapping Name="tabloKurumsal">
-            <EntityTypeMapping TypeName="dbGoTripModel.tabloKurumsal">
+            <EntityTypeMapping TypeName="GoTripModel.tabloKurumsal">
               <MappingFragment StoreEntitySet="tabloKurumsal">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Baslik" ColumnName="Baslik" />
@@ -361,7 +361,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblAyarlar">
-            <EntityTypeMapping TypeName="dbGoTripModel.tblAyarlar">
+            <EntityTypeMapping TypeName="GoTripModel.tblAyarlar">
               <MappingFragment StoreEntitySet="tblAyarlar">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
@@ -381,7 +381,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblBlog">
-            <EntityTypeMapping TypeName="dbGoTripModel.tblBlog">
+            <EntityTypeMapping TypeName="GoTripModel.tblBlog">
               <MappingFragment StoreEntitySet="tblBlog">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Baslik" ColumnName="Baslik" />
@@ -399,7 +399,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblBlogKategori">
-            <EntityTypeMapping TypeName="dbGoTripModel.tblBlogKategori">
+            <EntityTypeMapping TypeName="GoTripModel.tblBlogKategori">
               <MappingFragment StoreEntitySet="tblBlogKategori">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
@@ -412,7 +412,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblGaleri">
-            <EntityTypeMapping TypeName="dbGoTripModel.tblGaleri">
+            <EntityTypeMapping TypeName="GoTripModel.tblGaleri">
               <MappingFragment StoreEntitySet="tblGaleri">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Baslik" ColumnName="Baslik" />
@@ -427,7 +427,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblGaleriKategori">
-            <EntityTypeMapping TypeName="dbGoTripModel.tblGaleriKategori">
+            <EntityTypeMapping TypeName="GoTripModel.tblGaleriKategori">
               <MappingFragment StoreEntitySet="tblGaleriKategori">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Adi" ColumnName="Adi" />
@@ -440,7 +440,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblKullanici">
-            <EntityTypeMapping TypeName="dbGoTripModel.tblKullanici">
+            <EntityTypeMapping TypeName="GoTripModel.tblKullanici">
               <MappingFragment StoreEntitySet="tblKullanici">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -457,7 +457,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblTurPaket">
-            <EntityTypeMapping TypeName="dbGoTripModel.tblTurPaket">
+            <EntityTypeMapping TypeName="GoTripModel.tblTurPaket">
               <MappingFragment StoreEntitySet="tblTurPaket">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Adi" ColumnName="Adi" />
@@ -490,7 +490,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

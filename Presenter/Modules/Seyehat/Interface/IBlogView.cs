@@ -1,11 +1,11 @@
-﻿using DTO.Modules.Seyehat;
+﻿using DTO.Modules.SeyehatWeb;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Presenter.Modules.Seyehat.Interface
+namespace Presenter.Modules.SeyehatWeb.Interface
 {
     public interface IBlogView
     {
@@ -29,13 +29,14 @@ namespace Presenter.Modules.Seyehat.Interface
         String Detay { get; }
         DateTime? Tarih { get; }
 
-
+        BlogKategoriDTO BlogKategori { get; set; }
 
         #endregion
 
         #region Listeleme
 
         List<BlogDTO> BlogListe { set; }
+        List<BlogKategoriDTO> KategoriListesi { set; }
 
 
         #endregion

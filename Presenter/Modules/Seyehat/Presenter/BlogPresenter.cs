@@ -1,13 +1,13 @@
-﻿using DTO.Modules.Seyehat;
-using Presenter.Modules.Seyehat.Interface;
-using Service.Modules.Seyehat;
+﻿using DTO.Modules.SeyehatWeb;
+using Presenter.Modules.SeyehatWeb.Interface;
+using Service.Modules.SeyehatWeb;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Presenter.Modules.Seyehat.Presenter
+namespace Presenter.Modules.SeyehatWeb.Presenter
 {
     public class BlogPresenter
     {
@@ -31,6 +31,13 @@ namespace Presenter.Modules.Seyehat.Presenter
             get { return _bloglarService ?? (_bloglarService = new BlogService()); }
         }
 
+        private BlogKategoriService _blogKategoriService;
+
+        protected BlogKategoriService BlogKategoriService
+        {
+            get { return _blogKategoriService ?? (_blogKategoriService = new BlogKategoriService()); }
+        }
+
 
         #endregion
 
@@ -40,7 +47,10 @@ namespace Presenter.Modules.Seyehat.Presenter
         {
             View.BlogListe = BlogService.BlogListele();
         }
-
+        public void KategoriListele()
+        {
+            View.KategoriListesi =BlogKategoriService.BlogKategoriListele();
+        }
 
 
         public void AramaSonuclariniListele(string siteOzet)

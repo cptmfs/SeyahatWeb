@@ -12,7 +12,7 @@ namespace SeyehatWeb.Yönetim
 {
     public partial class Kurumsal : System.Web.UI.Page
     {
-        string congBaglanti = WebConfigurationManager.ConnectionStrings["dbGoTripConnectionString"].ConnectionString;
+        string congBaglanti = WebConfigurationManager.ConnectionStrings["GoTripConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -1,13 +1,13 @@
-﻿using DTO.Modules.Seyehat;
-using Presenter.Modules.Seyehat.Interface;
-using Service.Modules.Seyehat;
+﻿using DTO.Modules.SeyehatWeb;
+using Presenter.Modules.SeyehatWeb.Interface;
+using Service.Modules.SeyehatWeb;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Presenter.Modules.Seyehat.Presenter
+namespace Presenter.Modules.SeyehatWeb.Presenter
 {
     public class KurumsalPresenter
     {

@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2cc94b5fa99746e9a9b6b74ff89eab79" Name="Diagram1">
-        <EntityTypeShape EntityType="dbGoTripModel.tabloKurumsal" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbGoTripModel.tblAyarlar" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbGoTripModel.tblBlog" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbGoTripModel.tblBlogKategori" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbGoTripModel.tblGaleri" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbGoTripModel.tblGaleriKategori" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbGoTripModel.tblKullanici" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbGoTripModel.tblTurPaket" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="dbGoTripModel.FK_tblBlog_tblBlogKategori" ManuallyRouted="false" />
-        <AssociationConnector Association="dbGoTripModel.FK_tblGaleri_tblGaleriKategori" ManuallyRouted="false" />
+      <Diagram DiagramId="7fe73df674894328ba8466de59408ca4" Name="Diagram1">
+        <EntityTypeShape EntityType="GoTripModel.tabloKurumsal" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GoTripModel.tblAyarlar" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GoTripModel.tblBlog" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GoTripModel.tblBlogKategori" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GoTripModel.tblGaleri" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GoTripModel.tblGaleriKategori" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GoTripModel.tblKullanici" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GoTripModel.tblTurPaket" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="GoTripModel.FK_tblBlog_tblBlogKategori" ManuallyRouted="false" />
+        <AssociationConnector Association="GoTripModel.FK_tblGaleri_tblGaleriKategori" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

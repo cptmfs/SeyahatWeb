@@ -12,7 +12,7 @@ namespace SeyehatWeb.Yönetim
     public partial class BlogEkle : System.Web.UI.Page
     {
         DateTime bugun = DateTime.Now;
-        string congBaglanti = WebConfigurationManager.ConnectionStrings["dbGoTripConnectionString"].ConnectionString;
+        string congBaglanti = WebConfigurationManager.ConnectionStrings["GoTripConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
