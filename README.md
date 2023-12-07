@@ -1,6 +1,6 @@
-# SeyehatWeb - ASP.NET Web Form Projesi
+# SeyahatWeb - ASP.NET Web Form Projesi
 
-SeyehatWeb, kullanıcıların planladıkları tatil ve turları kolayca satın almalarını sağlayan bir ASP.NET Web Form projesidir. Ayrıca, admin paneli üzerinden site ile ilgili ayarlar, blog yazıları, tur paketleri ve galeri görselleri gibi birçok işlemi yönetme imkanı sunar.
+SeyahatWeb, kullanıcıların planladıkları tatil ve turları kolayca satın almalarını sağlayan bir ASP.NET Web Form projesidir. Ayrıca, admin paneli üzerinden site ile ilgili ayarlar, blog yazıları, tur paketleri ve galeri görselleri gibi birçok işlemi yönetme imkanı sunar.
 
 # Özellikler
 - **Kullanıcı Arayüzü**: Kullanıcılar, planladıkları tatil ve turlara kolayca göz atabilir, detaylı bilgilere ulaşabilir ve satın alma işlemlerini gerçekleştirebilirler.
@@ -13,7 +13,7 @@ SeyehatWeb, kullanıcıların planladıkları tatil ve turları kolayca satın a
 Projeyi yerel ortamınıza klonlayın ve Visual Studio veya benzer bir IDE kullanarak açın. Projeyi çalıştırabilmek için .NET Framework 4.5 veya üzeri sürümüne ihtiyaç duyulmaktadır.
 
 ```bash
-git clone https://github.com/cptmfs/SeyehatWeb.git
+git clone https://github.com/cptmfs/SeyahatWeb.git
 ```
 
 # Gereksinimler
