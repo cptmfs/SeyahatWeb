@@ -74,6 +74,18 @@ namespace Repository.Modules.SeyehatWeb.Repository
 
             _unitOfWork.Save();
         }
+        public void BlogResimGuncelle(tblBlog blog)
+        {
+            var guncelleBlogResim = _unitOfWork.tblBlog.GetById(blog.Id);
+
+            if (guncelleBlogResim == null) return;
+            guncelleBlogResim.Resim = blog.Resim;
+
+            guncelleBlogResim.GuncelleyenKullanici = SessionHelper.KullaniciId;
+            guncelleBlogResim.GuncellestirilmeTarihi = DateTime.Now;
+
+            _unitOfWork.Save();
+        }
 
         public void BlogSil(tblBlog blog, bool fizikselSil = false)
         {
@@ -81,6 +93,7 @@ namespace Repository.Modules.SeyehatWeb.Repository
             _unitOfWork.tblBlog.Delete(silinecekBlogKaydi, fizikselSil);
             _unitOfWork.Save();
         }
+
 
         #endregion
     }

@@ -1,8 +1,12 @@
 ﻿using DTO.Modules.SeyehatWeb;
+using Infrastructure.Enum;
+using Infrastructure.Helper;
 using Presenter.Modules.SeyehatWeb.Interface;
 using Presenter.Modules.SeyehatWeb.Presenter;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -47,6 +51,98 @@ namespace SeyahatWeb.Yönetim
 
             ViewState["Liste"] = "Default";
         }
+        protected void btnYukle_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(uploadBlogResmi.FileName))
+            {
+                try
+                {
+                    string[] contentTypes = { "image/jpeg", "image/pjpeg", "image/png", "image/bmp" };
+                    FileInfo fi = new FileInfo(uploadBlogResmi.FileName);
+                    string ext = fi.Extension;
+                    if (contentTypes.Contains(uploadBlogResmi.PostedFile.ContentType))
+                    {
+                        if (uploadBlogResmi.PostedFile.ContentLength <= 1048576)
+                        {
+                            // Dosya adını oluştur
+                            string resimAdi = String.Format("{0}.jpg", uploadBlogResmi.FileName);
+
+                            // Resmi proje içindeki bir klasöre kaydet
+                            string resimYolu = Server.MapPath("~/images/blog/") + resimAdi;
+
+
+                            try
+                            {
+                                //Stream st = uploadBlogResmi.PostedFile.InputStream;
+                                //S3SunucuTransferHelper.DosyaYukle(st, FotografUrl, ConfigurationManager.AppSettings["PersonelResimleriBucket"], "image/jpg");
+                                uploadBlogResmi.SaveAs(resimYolu);
+                                Resim=resimYolu;
+                                Presenter.BlogResmiYukle();
+
+                            }
+                            catch
+                            {
+                                Resim = null;
+
+                                MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Hata, "Fotoğraf Yüklenemedi",
+                                                             "Kayıt işlemi yapıldı ancak fotoğraf yükleme işlemi sırasında bir hata oluştu.");
+
+                                return;
+                            }
+
+                            MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Basari, "Kayıt Başarılı",
+                                                         "Kayıt işlemi başarıyla tamamlanmıştır.");
+
+                        }
+                        else
+                        {
+                            MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Uyari, "Fotoğraf Boyutu Büyük",
+                                                             "Yüklenecek fotoğraf en fazla 1 MB büyüklüğünde olmalıdır.",
+                                                             requireRefresh: false);
+                        }
+                    }
+                    else
+                    {
+                        MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Uyari, "Uyumsuz Dosya",
+                                                             "Yüklenecek fotoğraf .jpeg, .jpg, .png ya da .bmp tipinde olmalıdır.",
+                                                             requireRefresh: false);
+                    }
+                }
+                catch (Exception exp)
+                {
+                    MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Hata, "Hata Oluştu",
+                                                 exp.InnerException.Message.Contains("UNIQUE KEY")
+                                                     ? "Belirtilen başvuru sistemde kayıtlıdır."
+                                                     : "Kayıt işlemi sırasında bir hata meydana geldi.",
+                                                 requireRefresh: false);
+                }
+            }
+            else
+            {
+                MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Uyari, "Dosya Seçilmedi",
+                                                                           "Yüklenecek dosyayı seçerek kaydet işlemine devam ediniz.",
+                                                                           requireRefresh: false);
+            }
+        }
+
+        protected void gridBlog_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType != DataControlRowType.DataRow) return;
+
+            var blog = e.Row.DataItem as BlogDTO;
+
+            if (blog == null) return;
+            var resimyolu = "";
+            var dosyaYolu = System.IO.Path.GetFileName(blog.Resim);
+            // Resmin fiziksel yolu
+            var resimFizikselYolu = "~/images/blog/" + dosyaYolu;
+            if (resimFizikselYolu != null)
+                resimyolu = resimFizikselYolu;
+            else
+                resimyolu = "/img/nopersonelimage.jpg";
+
+            (e.Row.FindControl("BlogResim") as Image).ImageUrl = resimyolu;
+        }
         protected void gridBlog_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
 
@@ -54,7 +150,21 @@ namespace SeyahatWeb.Yönetim
 
         protected void btnKaydet_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid) return;
 
+            // Kullanıcı Ekleme İşlemi Başarılı Oldu ise...
+            var result = Presenter.BlogEkle();
+
+            if (result.Item1)
+            {
+                MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Basari, "Başarılı", result.Item2, requireRefresh: true);
+            }
+            else
+            {
+                MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Hata, "Başarısız", result.Item2, requireRefresh: false);
+            }
+
+            this.Presenter.BlogiListele();
         }
 
         protected void btnGuncelle_Click(object sender, EventArgs e)
@@ -67,81 +177,7 @@ namespace SeyahatWeb.Yönetim
 
         }
 
-        //protected void btnAra_Click(object sender, EventArgs e)
-        //{
-        //    ViewState["Liste"] = "Search";
-        //    this.Presenter.AramaSonuclariniListele();
-        //}
 
-        //protected void btnKaydet_Click(object sender, EventArgs e)
-        //{
-        //    if (!Page.IsValid) return;
-
-        //    // Kullanıcı Ekleme İşlemi Başarılı Oldu ise...
-        //    var result = Presenter.AracTanimKayitEkle();
-
-        //    if (result.Item1)
-        //    {
-        //        MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Basari, "Başarılı", result.Item2, requireRefresh: true);
-        //    }
-        //    else
-        //    {
-        //        MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Hata, "Başarısız", result.Item2, requireRefresh: false);
-        //    }
-
-        //    this.Presenter.AraclariListele(SessionHelper.MerkezId);
-        //}
-
-        //protected void gridAracListesi_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        //{
-        //    gridAracListesi.PageIndex = e.NewPageIndex;
-
-        //    switch (this.ListelemeViewState)
-        //    {
-        //        case 0:
-        //            this.Presenter.AraclariListele(SessionHelper.MerkezId);
-        //            break;
-        //        case 1:
-        //            this.Presenter.AramaSonuclariniListele(SessionHelper.MerkezId);
-        //            break;
-        //    }
-        //}
-
-        //protected void btnGuncelle_Click(object sender, EventArgs e)
-        //{
-        //    if (!Page.IsValid) return;
-
-
-        //    var result = Presenter.AracTanimKayitGuncelle();
-        //    if (result.Item1)
-        //    {
-        //        MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Basari, "Güncellendi", result.Item2, requireRefresh: true);
-        //    }
-        //    else
-        //    {
-        //        MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Hata, "Başarısız", result.Item2, requireRefresh: false);
-        //    }
-
-        //    this.Presenter.AracListele(SecilenAracId, SessionHelper.MerkezId);
-
-        //}
-
-        //protected void btnSil_Click(object sender, EventArgs e)
-        //{
-        //    if (!Page.IsValid) return;
-
-
-        //    var result = Presenter.AracTanimKayitSil();
-        //    if (result.Item1)
-        //    {
-        //        MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Basari, "Silindi", result.Item2, requireRefresh: true);
-        //    }
-        //    else
-        //    {
-        //        MesajHelper.PopupMesajGoster(this, PopupMesajTipleri.Hata, "Başarısız", result.Item2, requireRefresh: false);
-        //    }
-        //    this.Presenter.AraclariListele(SessionHelper.MerkezId);
-        //}
         #endregion
 
         #region AJAX - WebMethod
@@ -181,7 +217,7 @@ namespace SeyahatWeb.Yönetim
         {
             get
             {
-                return String.IsNullOrWhiteSpace(Baslik) ? null : (Baslik.Trim());
+                return String.IsNullOrWhiteSpace(txtBaslik.Text) ? null : (txtBaslik.Text.Trim());
             }
         }
 
@@ -189,7 +225,7 @@ namespace SeyahatWeb.Yönetim
         {
             get
             {
-                return String.IsNullOrWhiteSpace(Ozet) ? null : (Ozet.Trim());
+                return String.IsNullOrWhiteSpace(txtOzet.Text) ? null : (txtOzet.Text.Trim());
             }
         }
 
@@ -197,22 +233,19 @@ namespace SeyahatWeb.Yönetim
         {
             get
             {
-                return KategoriId.Value > 0 ? KategoriId.Value : -1;
+                return drpBlogKategori.SelectedIndex >0 ? int.Parse(drpBlogKategori.SelectedItem.Value): -1;
             }
         }
         public string Resim
         {
-            get
-            {
-                return String.IsNullOrWhiteSpace(Resim) ? null : (Resim.Trim());
-            }
+            get; set;
         }
 
         public string Detay
         {
             get
             {
-                return String.IsNullOrWhiteSpace(Detay) ? null : (Detay.Trim());
+                return String.IsNullOrWhiteSpace(txtDetay.Text) ? null : (txtDetay.Text.Trim());
             }
         }
 
@@ -220,7 +253,9 @@ namespace SeyahatWeb.Yönetim
         {
             get
             {
-                return String.IsNullOrWhiteSpace(Tarih.ToString()) ? null : Tarih;
+                return String.IsNullOrWhiteSpace(txtTarih.Text)
+                   ? (DateTime?)null
+                   : DateTime.Parse(txtTarih.Text.Trim());
             }
         }
         public BlogKategoriDTO BlogKategori
@@ -275,7 +310,8 @@ namespace SeyahatWeb.Yönetim
         }
 
 
-   
+
+
 
 
         #endregion

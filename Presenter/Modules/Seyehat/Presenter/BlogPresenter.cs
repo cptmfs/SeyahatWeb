@@ -42,7 +42,8 @@ namespace Presenter.Modules.SeyehatWeb.Presenter
         #endregion
 
         #region Methods
-
+        
+           
         public void BlogiListele()
         {
             View.BlogListe = BlogService.BlogListele();
@@ -68,7 +69,6 @@ namespace Presenter.Modules.SeyehatWeb.Presenter
                 Baslik=View.Baslik,
                 Detay=View.Detay,
                 Ozet=View.Ozet,
-                Resim = View.Resim,
                 Tarih = View.Tarih,
                 KategoriId = View.KategoriId,
                 
@@ -98,7 +98,15 @@ namespace Presenter.Modules.SeyehatWeb.Presenter
         {
             return BlogService.BlogSil(View.SecilenBlogId);
         }
-
+        public Tuple<bool, string> BlogResmiYukle()
+        {
+            var blog = new BlogDTO
+            {
+                Id = View.SecilenBlogId,
+                Resim = View.Resim
+            };
+            return BlogService.BlogResmiYukle(blog);
+        }
         // AJAX işlemleri için
         public BlogDTO BlogGetir(int id)
         {

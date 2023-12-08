@@ -6,38 +6,8 @@
     <h3 class="page-title">Blog Düzenleme / Silme Sayfası</h3>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbGoTripConnectionString %>" SelectCommand="SELECT * FROM [tblBlog]" DeleteCommand="DELETE FROM [tblBlog] WHERE [Id] = @Id" InsertCommand="INSERT INTO [tblBlog] ([Baslik], [Ozet], [KategoriId], [Resim], [Detay], [Tarih]) VALUES (@Baslik, @Ozet, @KategoriId, @Resim, @Detay, @Tarih)" UpdateCommand="UPDATE [tblBlog] SET [Baslik] = @Baslik, [Ozet] = @Ozet, [KategoriId] = @KategoriId, [Resim] = @Resim, [Detay] = @Detay, [Tarih] = @Tarih WHERE [Id] = @Id">
-        <DeleteParameters>
-            <asp:Parameter Name="Id" Type="Int32"></asp:Parameter>
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="Baslik" Type="String"></asp:Parameter>
-            <asp:Parameter Name="Ozet" Type="String"></asp:Parameter>
-            <asp:Parameter Name="KategoriId" Type="Int32"></asp:Parameter>
-            <asp:Parameter Name="Resim" Type="String"></asp:Parameter>
-            <asp:Parameter Name="Detay" Type="String"></asp:Parameter>
-            <asp:Parameter Name="Tarih" Type="DateTime"></asp:Parameter>
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="Baslik" Type="String"></asp:Parameter>
-            <asp:Parameter Name="Ozet" Type="String"></asp:Parameter>
-            <asp:Parameter Name="KategoriId" Type="Int32"></asp:Parameter>
-            <asp:Parameter Name="Resim" Type="String"></asp:Parameter>
-            <asp:Parameter Name="Detay" Type="String"></asp:Parameter>
-            <asp:Parameter Name="Tarih" Type="DateTime"></asp:Parameter>
-            <asp:Parameter Name="Id" Type="Int32"></asp:Parameter>
-        </UpdateParameters>
-    </asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" CssClass="table table-striped" AllowPaging="True" AllowSorting="True">
-        <Columns>
-            <asp:TemplateField>
-                <ItemTemplate>
-                    <asp:HyperLink ID="HyperLink1" NavigateUrl='<%#Eval("id","BlogDuzenleSecilen.aspx?id={0}") %>' runat="server">Duzenle</asp:HyperLink>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="False"></asp:CommandField>
-        </Columns>
-    </asp:GridView>--%>
+
+
     <div class="accordion-group">
         <div class="accordion-heading accordion-heading-header">
             <span class="accordion-toggle" style="position: relative; left: -9px; cursor: default">
@@ -52,12 +22,18 @@
 
     <div class="table-responsive">
         <asp:GridView ID="gridBlog" runat="server" Width="100%" CssClass="table table-bordered table-condensed table-striped"
-            Font-Names="Calibri" AutoGenerateColumns="False" PageSize="20" DataKeyNames="Id" AllowPaging="True" OnPageIndexChanging="gridBlog_PageIndexChanging">
+            Font-Names="Calibri" AutoGenerateColumns="False" PageSize="20" DataKeyNames="Id" AllowPaging="True" OnPageIndexChanging="gridBlog_PageIndexChanging" OnRowDataBound="gridBlog_RowDataBound">
             <Columns>
-
+                <asp:TemplateField>
+                    <HeaderTemplate>Fotoğraf</HeaderTemplate>
+                    <ItemTemplate>
+                       <asp:Image ID="BlogResim" runat="server" style="width:200px;height:200px;border-radius:0%"/>
+                    </ItemTemplate>
+                    <ItemStyle Width="10%" VerticalAlign="Middle" HorizontalAlign="Center" />
+                </asp:TemplateField>
                 <asp:BoundField DataField="Id" HeaderText="Id No" SortExpression="Id"
                     NullDisplayText="-">
-                    <ItemStyle Width="25%" HorizontalAlign="Left" VerticalAlign="Middle" />
+                    <ItemStyle Width="5%" HorizontalAlign="Left" VerticalAlign="Middle" />
                 </asp:BoundField>
 
                 <asp:BoundField DataField="Baslik" HeaderText="Başlık" SortExpression="Baslik"
@@ -67,18 +43,18 @@
 
                 <asp:BoundField DataField="Ozet" HeaderText="Özet" SortExpression="Ozet"
                     NullDisplayText="-">
-                    <ItemStyle Width="10%" HorizontalAlign="left" VerticalAlign="Middle" />
+                    <ItemStyle Width="10%" HorizontalAlign="Center" VerticalAlign="Middle" />
                 </asp:BoundField>
 
                 <asp:BoundField DataField="KategoriId" HeaderText="Kategori Id" SortExpression="KategoriId"
                     NullDisplayText="-">
-                    <ItemStyle Width="8%" HorizontalAlign="Center" VerticalAlign="Middle" />
+                    <ItemStyle Width="5%" HorizontalAlign="Center" VerticalAlign="Middle" />
                 </asp:BoundField>
                 <asp:TemplateField HeaderText="Detay" SortExpression="Detay">
                     <ItemTemplate>
                         <%# Eval("Detay").ToString().Length > 100 ? Eval("Detay").ToString().Substring(0, 100) + "..." : Eval("Detay") %>
                     </ItemTemplate>
-                    <ItemStyle Width="8%" HorizontalAlign="Center" VerticalAlign="Middle" />
+                    <ItemStyle Width="30%" HorizontalAlign="Center" VerticalAlign="Middle" />
                 </asp:TemplateField>
                 <asp:BoundField DataField="Tarih" HeaderText="Tarih" SortExpression="Tarih"
                     NullDisplayText="-">
@@ -107,6 +83,10 @@
                             id="A3" runat="server" title="Sil" data-id='<%# Eval("Id") %>' onclick="Blog(this);"
                             href="#BlogModal" style="padding-left: 8px;" data-islemtipi="kayitSil">
                             <img src="/images/gCons/recycle-full.png" alt="Sil" /></a>
+                        <a data-bs-toggle="modal" data-bs-backdrop="static"
+                            id="A5" runat="server" title="Blog Resmi Yükle" data-bs-id='<%# Eval("Id") %>' onclick="Blog(this);"
+                            href="#BlogResmiYukleModal" style="padding-left: 8px;" data-bs-islemtipi="ListeYukle">
+                            <img src="doc/img/gCons/pin.png" alt="Blog Resmi Yükle" /></a>
 
                     </ItemTemplate>
                     <ItemStyle Width="20%" VerticalAlign="Middle" HorizontalAlign="Center" />
@@ -179,7 +159,7 @@
                                             ValidationGroup="Islem" SetFocusOnError="True" ForeColor="Red" InitialValue="-1" />
                                     </td>
                                 </tr>
-                                <tr>
+                                <%-- <tr>
                                     <td class="tdWidth" style="text-align: right; vertical-align: middle">Resim :
                                     </td>
                                     <td>
@@ -187,15 +167,25 @@
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Text="*" ControlToValidate="txtDetay"
                                             ValidationGroup="Islem" SetFocusOnError="True" ForeColor="Red" />
                                     </td>
-                                    <tr>
-                                        <td class="tdWidth" style="text-align: right; vertical-align: middle">Detay :
-                                        </td>
-                                        <td>
-                                            <asp:TextBox CssClass="form-control" runat="server" ID="txtDetay" />
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorDetay" runat="server" Text="*" ControlToValidate="txtDetay"
-                                                ValidationGroup="Islem" SetFocusOnError="True" ForeColor="Red" />
-                                        </td>
-                                    </tr>
+                                </tr>
+                                <tr>
+                                    <td class="tdWidth" style="text-align: right; vertical-align: middle">Resim :
+                                    </td>
+                                    <td>
+                                        <asp:FileUpload ID="uploadBlogResim" Width="100%" runat="server" Style="position: relative; height: 32px; vertical-align: middle" onchange="readURL(this);" />
+
+                                        <asp:RequiredFieldValidator ID="requiredDosya" runat="server" ControlToValidate="uploadBlogResim" ValidationGroup="Islem" Text="*" ForeColor="Red" />
+                                        (maks. 1 MB)   </td>
+                                </tr>--%>
+                                <tr>
+                                    <td class="tdWidth" style="text-align: right; vertical-align: middle">Detay :
+                                    </td>
+                                    <td>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtDetay" />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorDetay" runat="server" Text="*" ControlToValidate="txtDetay"
+                                            ValidationGroup="Islem" SetFocusOnError="True" ForeColor="Red" />
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td class="tdWidth" style="text-align: right; vertical-align: middle">Tarih :
                                     </td>
@@ -225,7 +215,94 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+
+
+    <div class="modal fade" id="BlogResmiYukleModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h3>
+                        <span class="ListeYukle">
+                            <img src="/img/gCons/pin.png" alt="" />Blog Resmi Yükle </span>
+                    </h3>
+                    <button data-bs-dismiss="modal" id="BlogResmiYukleModalCloseButton">
+                        ×</button>
+                </div>
+                <div class="modal-body">
+                    <div id="popupEkranı1">
+
+                        <table class="table table-bordered table-condensed table-striped dTableR" id="tblYukle">
+                            <thead>
+                                <tr>
+                                    <th colspan="4">Blog Resmi Yükle
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td colspan="2" style="text-align: left; vertical-align: middle">Blog Resmi Seç:
+                                </td>
+                                <td>
+                                    <asp:FileUpload ID="uploadBlogResmi" Width="100%" runat="server" Style="position: relative; height: 32px; vertical-align: middle" onchange="readURL(this);" />
+
+                                    <asp:RequiredFieldValidator ID="requiredDosya" runat="server" ControlToValidate="uploadBlogResmi" ValidationGroup="IslemYukle" Text="*" ForeColor="Red" />
+                                    (maks. 1 MB)   </td>
+                            </tr>
+                        </table>
+                        <table class="table table-bordered table-condensed table-striped dTableR listeGor" id="listeGor">
+                            <tr>
+                                <td colspan="2" style="text-align: left; vertical-align: middle">Blog Resmi Görüntüleme:
+                                </td>
+                                <td>
+                                    <asp:Image ID="imgResim" ClientIDMode="Static" runat="server" Height="242px" Width="347px" />
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="ListeYukle">
+                        <asp:Button ID="btnYukle" Text="Kaydet" CssClass="btn btn-primary" runat="server"
+                            ValidationGroup="IslemYukle" ClientIDMode="Static" OnClick="btnYukle_Click" /></span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <!-- Popup mesajları düzgün bir şekilde görebilmek için aşağıdaki PlaceHolder'ın isminin değiştirilmemesi gerekiyor. -->
+        <asp:PlaceHolder ID="popupMessagePlaceHolder" runat="server" EnableViewState="False" />
+    </div>
+    <!-- START: modalAlert -->
+    <a data-bs-toggle="modal" data-bs-backdrop="static" id="alertAnchor" data-bs-target="#modalAlert"
+        aria-hidden="true" style="visibility: hidden">alertModal </a>
+
+    <div class="modal fade" id="modalAlert">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h3>
+                        <span id="modalAlertHeader"></span>
+                    </h3>
+                    <button class="close" data-bs-dismiss="modal">
+                        ×</button>
+                </div>
+                <div class="modal-body">
+                    <span id="modalAlertBody"></span>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-secondary" data-bs-dismiss="modal" id="modalAlertClose">Kapat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: modalAlert -->
 
     <script type="text/javascript">
         var txtBaslik = $("#<%= txtBaslik.ClientID %>");
@@ -239,7 +316,31 @@
 
         // MODAL
 
-        function Blog(element) {            
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    // var image = new Image();
+                    // image.src = e.target.result;
+                    // var ratio = image.width / image.height;
+
+                    $('#imgResim')
+                        .width(100)
+                        .height(120)
+                        .attr('src', e.target.result);
+                };
+                $(".listeGor").show(100);
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+
+
+
+
+        function Blog(element) {
             var BlogId = $(element).attr("data-id");
             console.log("deneme");
             var islemTipi = $(element).attr("data-islemtipi");
@@ -259,17 +360,24 @@
                 data: "{'BlogId':" + BlogId + "}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                success: function (data) { 
-                    var BlogDetay= eval(data.d);
+                success: function (data) {
+                    var BlogDetay = eval(data.d);
                     hiddenSecilenBlogId.val(BlogDetay.Id.toString());
                     console.log(BlogDetay);
 
                     if (BlogDetay.Baslik != null) txtBaslik.val(BlogDetay.Baslik);
                     if (BlogDetay.Ozet != null) txtOzet.val(BlogDetay.Ozet);
                     if (BlogDetay.KategoriAciklama != null) drpKategori.val(BlogDetay.KategoriAciklama.toString());
-                    if (BlogDetay.Resim != null) imgResim.val(BlogDetay.Resim);
                     if (BlogDetay.Detay != null) txtDetay.val(BlogDetay.Detay);
                     if (BlogDetay.Tarih != null) txtTarih.val(BlogDetay.Tarih);
+
+                    var resim = "../images/blog/" + BlogDetay.Resim;
+
+                    if (BlogDetay.Resim != null) { $(".listeGor").show(100); imgResim.attr("src", resim); }
+                    else {
+                        $(".listeGor").hide(100);
+                    }
+
                 },
                 error: function (err) {
                     $("#modalAlertHeader").html("İşlem Yapılamıyor");
@@ -315,7 +423,7 @@
             }
         }
 
-        $("#BlogModalCloseButton").click(function () {Temizle();});
+        $("#BlogModalCloseButton").click(function () { Temizle(); });
         function PrepareModalPopup(islemTipi) {
             //Temizle();
             switch (islemTipi) {
@@ -373,24 +481,24 @@
                     .not(":input[type=submit]")
                     .not("button")
                     .prop("disabled", "disabled");
-        } 
+        }
 
 
 
 
-        //$("#txtTarih").
-        //    datepicker({
-        //        dateFormat: "dd.mm.yy",
-        //        monthNames: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
-        //        dayNamesMin: ["Pzr", "Pts", "Sal", "Çrş", "Prş", "Cm", "Cts"],
-        //        setDate: new Date(),
-        //        maxDate: new Date(),
-        //        firstDay: 1,
-        //        required: true,
-        //        changeYear: true,
-        //        changeMonth: true,
-        //        monthNamesShort: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
-        //    });
+        $("#txtTarih").
+            datepicker({
+                dateFormat: "dd.mm.yy",
+                monthNames: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+                dayNamesMin: ["Pzr", "Pts", "Sal", "Çrş", "Prş", "Cm", "Cts"],
+                setDate: new Date(),
+                maxDate: new Date(),
+                firstDay: 1,
+                required: true,
+                changeYear: true,
+                changeMonth: true,
+                monthNamesShort: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
+            });
 
     </script>
 </asp:Content>

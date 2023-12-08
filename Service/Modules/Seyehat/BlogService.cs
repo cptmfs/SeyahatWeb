@@ -41,10 +41,8 @@ namespace Service.Modules.SeyehatWeb
                 KategoriAciklama= blog.tblBlogKategori.Ad,
                 Resim= blog.Resim,
                 Detay= blog.Detay,
-                Tarih = blog.Tarih
-               
+                Tarih = blog.Tarih           
             };
-
         }
 
         public List<BlogDTO> BlogListele()
@@ -101,7 +99,6 @@ namespace Service.Modules.SeyehatWeb
                 Baslik = blog.Baslik,
                 Ozet = blog.Ozet,
                 KategoriId = blog.KategoriId,
-                Resim = blog.Resim,
                 Detay = blog.Detay,
                 Tarih = blog.Tarih
             };
@@ -158,6 +155,27 @@ namespace Service.Modules.SeyehatWeb
             catch (Exception ex)
             {
                 return new Tuple<bool, string>(false, String.Format("Silme işlemi sırasında bir hata meydana geldi: ({0})", ex.Message));
+            }
+        }
+        public Tuple<bool, string> BlogResmiYukle(BlogDTO blog)
+        {
+            if (blog == null)
+                return new Tuple<bool, string>(false, "Parametre null değer içeriyor.");
+
+            var guncelleBlog = new tblBlog
+            {
+                Id = blog.Id,
+                Resim = blog.Resim
+            };
+
+            try
+            {
+                BlogRepository.BlogResimGuncelle(guncelleBlog);
+                return new Tuple<bool, string>(true, "Güncelleme işlemi başarıyla gerçekleştirilmiştir.");
+            }
+            catch (Exception ex)
+            {
+                return new Tuple<bool, string>(false, String.Format("Güncelleme işlemi sırasında bir hata meydana geldi: ({0})", ex.Message));
             }
         }
 
