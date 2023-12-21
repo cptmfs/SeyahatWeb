@@ -44,6 +44,13 @@
     <Compile Include="Modules\Seyehat\AyarlarService.cs" />
     <Compile Include="Modules\Seyehat\BlogKategoriService.cs" />
     <Compile Include="Modules\Seyehat\BlogService.cs" />
+    <Compile Include="Modules\Seyehat\EgitimDetayFormuDetayService.cs" />
+    <Compile Include="Modules\Seyehat\EgitimDetayFormuGuncellemeService.cs" />
+    <Compile Include="Modules\Seyehat\EgitimDetayFormuService.cs" />
+    <Compile Include="Modules\Seyehat\EgitimDetayFormuSoruBaglantiService.cs" />
+    <Compile Include="Modules\Seyehat\EgitimDetayFormuSoruBaslikService.cs" />
+    <Compile Include="Modules\Seyehat\EgitimDetayFormuSoruSecenekleriService.cs" />
+    <Compile Include="Modules\Seyehat\EgitimDetayFormuSoruService.cs" />
     <Compile Include="Modules\Seyehat\GaleriKategoriService.cs" />
     <Compile Include="Modules\Seyehat\GaleriService.cs" />
     <Compile Include="Modules\Seyehat\KullaniciService.cs" />
@@ -59,6 +66,10 @@
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{4C3FE3A4-1E37-4264-BD2E-43F44D5A7AA3}</Project>
       <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{4DDC4C60-FD03-4BF2-B266-0C07338AB10A}</Project>
+      <Name>Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\Repository\Repository.csproj">
       <Project>{DADD7EFF-BBE3-4D31-9895-CED86A7B5A6A}</Project>

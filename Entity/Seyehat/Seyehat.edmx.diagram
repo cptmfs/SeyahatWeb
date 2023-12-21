@@ -15,6 +15,21 @@
         <EntityTypeShape EntityType="GoTripModel.tblTurPaket" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="GoTripModel.FK_tblBlog_tblBlogKategori" ManuallyRouted="false" />
         <AssociationConnector Association="GoTripModel.FK_tblGaleri_tblGaleriKategori" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="GoTripModel.EgitimDetayFormuSoruBaslik" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="GoTripModel.EgitimDetayFormuSoru" Width="1.5" PointX="3.375" PointY="9.75" />
+        <AssociationConnector Association="GoTripModel.FK_EgitimDetayFormuSoru_EgitimDetayFormuSoruBaslik" />
+        <EntityTypeShape EntityType="GoTripModel.EgitimDetayFormu" Width="1.5" PointX="8.375" PointY="10" />
+        <EntityTypeShape EntityType="GoTripModel.EgitimDetayFormuDetay" Width="1.5" PointX="10.625" PointY="10.25" />
+        <EntityTypeShape EntityType="GoTripModel.EgitimDetayFormuSoruBaglanti" Width="1.5" PointX="5.625" PointY="14.125" />
+        <EntityTypeShape EntityType="GoTripModel.EgitimDetayFormuSoruSecenekleri" Width="1.5" PointX="5.625" PointY="10.125" />
+        <EntityTypeShape EntityType="GoTripModel.EgitimTuru" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="GoTripModel.VeriKaynagi" Width="1.5" PointX="10.375" PointY="4.75" />
+        <AssociationConnector Association="GoTripModel.FK_EgitimDetayFormuDetay_EgitimDetayFormu" />
+        <AssociationConnector Association="GoTripModel.FK_EgitimDetayFormuSoruBaglanti_EgitimDetayFormuSoru" />
+        <AssociationConnector Association="GoTripModel.FK_EgitimDetayFormuSoruSecenekleri_EgitimDetayFormuSoru" />
+        <AssociationConnector Association="GoTripModel.FK_EgitimDetayFormuDetay_EgitimDetayFormuSoruBaglanti" />
+        <EntityTypeShape EntityType="GoTripModel.EgitimDetayFormuGuncelleme" Width="1.5" PointX="12.375" PointY="0.75" />
+        <AssociationConnector Association="GoTripModel.FK_EgitimDetayFormuGuncelleme_EgitimDetayFormu" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

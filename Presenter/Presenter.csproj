@@ -44,6 +44,11 @@
     <Compile Include="Modules\Seyehat\Interface\IAyarView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IBlogKategoriView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IBlogView.cs" />
+    <Compile Include="Modules\Seyehat\Interface\IEgitimDetayFormuSoruBaglantiView.cs" />
+    <Compile Include="Modules\Seyehat\Interface\IEgitimDetayFormuSoruBaslikView.cs" />
+    <Compile Include="Modules\Seyehat\Interface\IEgitimDetayFormuSoruSecenekleriView.cs" />
+    <Compile Include="Modules\Seyehat\Interface\IEgitimDetayFormuSoruView.cs" />
+    <Compile Include="Modules\Seyehat\Interface\IEgitimDetayFormuView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IGaleriKategoriView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IGaleriView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IKullaniciView.cs" />
@@ -52,6 +57,11 @@
     <Compile Include="Modules\Seyehat\Presenter\AyarlarPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\BlogKategoriPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\BlogPresenter.cs" />
+    <Compile Include="Modules\Seyehat\Presenter\EgitimDetayFormuPresenter.cs" />
+    <Compile Include="Modules\Seyehat\Presenter\EgitimDetayFormuSoruBaglantiPresenter.cs" />
+    <Compile Include="Modules\Seyehat\Presenter\EgitimDetayFormuSoruBaslikPresenter.cs" />
+    <Compile Include="Modules\Seyehat\Presenter\EgitimDetayFormuSoruPresenter.cs" />
+    <Compile Include="Modules\Seyehat\Presenter\EgitimDetayFormuSoruSecenekleriPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\GaleriKategoriPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\GaleriPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\KullaniciPresenter.cs" />
@@ -67,8 +77,12 @@
       <Project>{78A141B5-6E11-4B1F-803F-32A6F703039F}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{4DDC4C60-FD03-4BF2-B266-0C07338AB10A}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
-      <Project>{60979D41-CE61-4789-9CEB-8ACEAF238D1B}</Project>
+      <Project>{60979d41-ce61-4789-9ceb-8aceaf238d1b}</Project>
       <Name>Service</Name>
     </ProjectReference>
   </ItemGroup>

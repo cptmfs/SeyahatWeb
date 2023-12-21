@@ -89,6 +89,60 @@ namespace Entity.Seyehat
             get { return _tblTurPaket  ?? (_tblTurPaket = CreateObjectSet<tblTurPaket>("tblTurPaket")); }
         }
         private ObjectSet<tblTurPaket> _tblTurPaket;
+    
+        public ObjectSet<EgitimDetayFormuSoruBaslik> EgitimDetayFormuSoruBaslik
+        {
+            get { return _egitimDetayFormuSoruBaslik  ?? (_egitimDetayFormuSoruBaslik = CreateObjectSet<EgitimDetayFormuSoruBaslik>("EgitimDetayFormuSoruBaslik")); }
+        }
+        private ObjectSet<EgitimDetayFormuSoruBaslik> _egitimDetayFormuSoruBaslik;
+    
+        public ObjectSet<EgitimDetayFormuSoru> EgitimDetayFormuSoru
+        {
+            get { return _egitimDetayFormuSoru  ?? (_egitimDetayFormuSoru = CreateObjectSet<EgitimDetayFormuSoru>("EgitimDetayFormuSoru")); }
+        }
+        private ObjectSet<EgitimDetayFormuSoru> _egitimDetayFormuSoru;
+    
+        public ObjectSet<EgitimDetayFormu> EgitimDetayFormu
+        {
+            get { return _egitimDetayFormu  ?? (_egitimDetayFormu = CreateObjectSet<EgitimDetayFormu>("EgitimDetayFormu")); }
+        }
+        private ObjectSet<EgitimDetayFormu> _egitimDetayFormu;
+    
+        public ObjectSet<EgitimDetayFormuDetay> EgitimDetayFormuDetay
+        {
+            get { return _egitimDetayFormuDetay  ?? (_egitimDetayFormuDetay = CreateObjectSet<EgitimDetayFormuDetay>("EgitimDetayFormuDetay")); }
+        }
+        private ObjectSet<EgitimDetayFormuDetay> _egitimDetayFormuDetay;
+    
+        public ObjectSet<EgitimDetayFormuSoruBaglanti> EgitimDetayFormuSoruBaglanti
+        {
+            get { return _egitimDetayFormuSoruBaglanti  ?? (_egitimDetayFormuSoruBaglanti = CreateObjectSet<EgitimDetayFormuSoruBaglanti>("EgitimDetayFormuSoruBaglanti")); }
+        }
+        private ObjectSet<EgitimDetayFormuSoruBaglanti> _egitimDetayFormuSoruBaglanti;
+    
+        public ObjectSet<EgitimDetayFormuSoruSecenekleri> EgitimDetayFormuSoruSecenekleri
+        {
+            get { return _egitimDetayFormuSoruSecenekleri  ?? (_egitimDetayFormuSoruSecenekleri = CreateObjectSet<EgitimDetayFormuSoruSecenekleri>("EgitimDetayFormuSoruSecenekleri")); }
+        }
+        private ObjectSet<EgitimDetayFormuSoruSecenekleri> _egitimDetayFormuSoruSecenekleri;
+    
+        public ObjectSet<EgitimTuru> EgitimTuru
+        {
+            get { return _egitimTuru  ?? (_egitimTuru = CreateObjectSet<EgitimTuru>("EgitimTuru")); }
+        }
+        private ObjectSet<EgitimTuru> _egitimTuru;
+    
+        public ObjectSet<VeriKaynagi> VeriKaynagi
+        {
+            get { return _veriKaynagi  ?? (_veriKaynagi = CreateObjectSet<VeriKaynagi>("VeriKaynagi")); }
+        }
+        private ObjectSet<VeriKaynagi> _veriKaynagi;
+    
+        public ObjectSet<EgitimDetayFormuGuncelleme> EgitimDetayFormuGuncelleme
+        {
+            get { return _egitimDetayFormuGuncelleme  ?? (_egitimDetayFormuGuncelleme = CreateObjectSet<EgitimDetayFormuGuncelleme>("EgitimDetayFormuGuncelleme")); }
+        }
+        private ObjectSet<EgitimDetayFormuGuncelleme> _egitimDetayFormuGuncelleme;
 
         #endregion
 

@@ -1,11 +1,12 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="SeyahatWeb.Yönetim.Admin" %>
+
 <!doctype html>
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <!-- main bootstrap js -->
+    <!-- main bootstrap js -->
 
     <title>Purple Admin</title>
 
@@ -13,16 +14,16 @@
     <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="doc/content/tree-multiselect.js-master_/dist/jquery.tree-multiselect.min.css" rel="stylesheet" />
     <!-- endinject -->
     <!-- inject:css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="assets/images/favicon.png" />    
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
 
-    <script src="doc/js/jquery.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="doc/content/tree-multiselect.js-master/dist/jquery.tree-multiselect.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -278,6 +279,43 @@
                                 <i class="mdi mdi-medical-bag menu-icon"></i>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="EgitimDetayFormu.aspx">
+                                <span class="menu-title">Egitim Detay Formu</span>
+                                <i class="mdi mdi-medical-bag menu-icon"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="EgitimDetaySoru.aspx">
+                                <span class="menu-title">Egitim Detay Soru</span>
+                                <i class="mdi mdi-medical-bag menu-icon"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="EgitimDetaySoruBaslik.aspx">
+                                <span class="menu-title">Egitim Detay Soru Baslik</span>
+                                <i class="mdi mdi-medical-bag menu-icon"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="EgitimDetaySoruBaglanti.aspx">
+                                <span class="menu-title">Egitim Detay Soru Baglanti</span>
+                                <i class="mdi mdi-medical-bag menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="EgitimDetaySoruSecenekleri.aspx">
+                                <span class="menu-title">Egitim Detay Soru Secenekleri</span>
+                                <i class="mdi mdi-medical-bag menu-icon"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="EgitimTuruTanim.aspx">
+                                <span class="menu-title">Egitim Türü Tanım</span>
+                                <i class="mdi mdi-medical-bag menu-icon"></i>
+                            </a>
+                        </li>
 
                     </ul>
                 </nav>
@@ -288,6 +326,10 @@
                             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                                 <h3 class="page-title">Forms</h3>
                             </asp:ContentPlaceHolder>
+                        </div>
+                        <div>
+                            <!-- Popup mesajları düzgün bir şekilde görebilmek için aşağıdaki PlaceHolder'ın isminin değiştirilmemesi gerekiyor. -->
+                            <asp:PlaceHolder ID="popupMessagePlaceHolder" runat="server" EnableViewState="False" />
                         </div>
                         <!-- START: modalAlert -->
                         <a data-bs-toggle="modal" data-bs-backdrop="static" id="alertAnchor" data-bs-target="#modalAlert"
@@ -348,11 +390,11 @@
         <!-- End custom js for this page-->
         <!-- Bootstrap CSS -->
 
-<!-- Bootstrap JS ve Popper.js -->
+        <!-- Bootstrap JS ve Popper.js -->
         <script src="../assets/js/bootstrap.min.js"></script>
-        <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
-
+        
     </form>
 </body>
 
-</html>
+
+

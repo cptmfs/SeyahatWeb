@@ -5,6 +5,135 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="GoTripModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EgitimDetayFormu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aktif" Type="bit" />
+          <Property Name="KapatmaTarihi" Type="datetime" />
+          <Property Name="KapatanKullaniciId" Type="int" />
+          <Property Name="AcmaTarihi" Type="datetime" />
+          <Property Name="AcanKullaniciId" Type="int" />
+          <Property Name="Tur" Type="int" />
+          <Property Name="OlusturanKullanici" Type="int" />
+          <Property Name="OlusturanMerkez" Type="int" />
+          <Property Name="OlusturulmaTarihi" Type="datetime" />
+          <Property Name="GuncelleyenKullanici" Type="int" />
+          <Property Name="GuncelleyenMerkez" Type="int" />
+          <Property Name="GuncellestirilmeTarihi" Type="datetime" />
+          <Property Name="Silindi" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EgitimDetayFormuDetay">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EgitimDetayFormuId" Type="int" />
+          <Property Name="Cevap" Type="nvarchar(max)" />
+          <Property Name="OlusturanKullanici" Type="int" />
+          <Property Name="OlusturanMerkez" Type="int" />
+          <Property Name="OlusturulmaTarihi" Type="datetime" />
+          <Property Name="GuncelleyenKullanici" Type="int" />
+          <Property Name="GuncelleyenMerkez" Type="int" />
+          <Property Name="GuncellestirilmeTarihi" Type="datetime" />
+          <Property Name="Silindi" Type="bit" Nullable="false" />
+          <Property Name="EgitimDetayFormuSoruBaglantiId" Type="int" />
+        </EntityType>
+        <EntityType Name="EgitimDetayFormuGuncelleme">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EgitimDetayFormuId" Type="int" />
+          <Property Name="Aciklama" Type="nvarchar(max)" />
+          <Property Name="OlusturanKullanici" Type="int" />
+          <Property Name="OlusturanMerkez" Type="int" />
+          <Property Name="OlusturulmaTarihi" Type="datetime" />
+          <Property Name="GuncelleyenKullanici" Type="int" />
+          <Property Name="GuncelleyenMerkez" Type="int" />
+          <Property Name="GuncellestirilmeTarihi" Type="datetime" />
+          <Property Name="Silindi" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EgitimDetayFormuSoru">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EgitimDetayFormuSoruBaslikId" Type="int" />
+          <Property Name="Tanim" Type="nvarchar(max)" />
+          <Property Name="CevapTuru" Type="int" />
+          <Property Name="Sira" Type="int" />
+          <Property Name="TxtSatirSayisi" Type="int" />
+          <Property Name="OlusturanKullanici" Type="int" />
+          <Property Name="OlusturanMerkez" Type="int" />
+          <Property Name="OlusturulmaTarihi" Type="datetime" />
+          <Property Name="GuncelleyenKullanici" Type="int" />
+          <Property Name="GuncelleyenMerkez" Type="int" />
+          <Property Name="GuncellestirilmeTarihi" Type="datetime" />
+          <Property Name="Silindi" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EgitimDetayFormuSoruBaglanti">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EDFSoruId" Type="int" />
+          <Property Name="Tur" Type="int" />
+          <Property Name="Aktif" Type="bit" />
+          <Property Name="OlusturanKullanici" Type="int" />
+          <Property Name="OlusturanMerkez" Type="int" />
+          <Property Name="OlusturulmaTarihi" Type="datetime" />
+          <Property Name="GuncelleyenKullanici" Type="int" />
+          <Property Name="GuncelleyenMerkez" Type="int" />
+          <Property Name="GuncellestirilmeTarihi" Type="datetime" />
+          <Property Name="Silindi" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EgitimDetayFormuSoruBaslik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tanim" Type="nvarchar" MaxLength="500" />
+          <Property Name="Sira" Type="int" />
+          <Property Name="OlusturanKullanici" Type="int" />
+          <Property Name="OlusturanMerkez" Type="int" />
+          <Property Name="OlusturulmaTarihi" Type="datetime" />
+          <Property Name="GuncelleyenKullanici" Type="int" />
+          <Property Name="GuncelleyenMerkez" Type="int" />
+          <Property Name="GuncellestirilmeTarihi" Type="datetime" />
+          <Property Name="Silindi" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EgitimDetayFormuSoruSecenekleri">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tanim" Type="nvarchar" MaxLength="500" />
+          <Property Name="EgitimDetayFormuSoruId" Type="int" />
+          <Property Name="Sira" Type="int" />
+          <Property Name="OlusturanKullanici" Type="int" />
+          <Property Name="OlusturanMerkez" Type="int" />
+          <Property Name="OlusturulmaTarihi" Type="datetime" />
+          <Property Name="GuncelleyenKullanici" Type="int" />
+          <Property Name="GuncelleyenMerkez" Type="int" />
+          <Property Name="GuncellestirilmeTarihi" Type="datetime" />
+          <Property Name="Silindi" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EgitimTuru">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tanim" Type="nvarchar" MaxLength="50" />
+          <Property Name="OlusturanKullanici" Type="int" />
+          <Property Name="OlusturanMerkez" Type="int" />
+          <Property Name="OlusturulmaTarihi" Type="datetime" />
+          <Property Name="GuncelleyenKullanici" Type="int" />
+          <Property Name="GuncelleyenMerkez" Type="int" />
+          <Property Name="GuncellestirilmeTarihi" Type="datetime" />
+          <Property Name="Silindi" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="tabloKurumsal">
           <Key>
             <PropertyRef Name="Id" />
@@ -126,6 +255,92 @@
           <Property Name="GuncellestirilmeTarihi" Type="datetime" />
           <Property Name="Silindi" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="VeriKaynagi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tanim" Type="nvarchar" MaxLength="50" />
+          <Property Name="OlusturanKullanici" Type="int" />
+          <Property Name="OlusturanMerkez" Type="int" />
+          <Property Name="OlusturulmaTarihi" Type="datetime" />
+          <Property Name="GuncelleyenKullanici" Type="int" />
+          <Property Name="GuncelleyenMerkez" Type="int" />
+          <Property Name="GuncellestirilmeTarihi" Type="datetime" />
+          <Property Name="Silindi" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_EgitimDetayFormuDetay_EgitimDetayFormu">
+          <End Role="EgitimDetayFormu" Type="Self.EgitimDetayFormu" Multiplicity="0..1" />
+          <End Role="EgitimDetayFormuDetay" Type="Self.EgitimDetayFormuDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDetayFormu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EgitimDetayFormuDetay">
+              <PropertyRef Name="EgitimDetayFormuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EgitimDetayFormuDetay_EgitimDetayFormuSoruBaglanti">
+          <End Role="EgitimDetayFormuSoruBaglanti" Type="Self.EgitimDetayFormuSoruBaglanti" Multiplicity="0..1" />
+          <End Role="EgitimDetayFormuDetay" Type="Self.EgitimDetayFormuDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDetayFormuSoruBaglanti">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EgitimDetayFormuDetay">
+              <PropertyRef Name="EgitimDetayFormuSoruBaglantiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EgitimDetayFormuGuncelleme_EgitimDetayFormu">
+          <End Role="EgitimDetayFormu" Type="Self.EgitimDetayFormu" Multiplicity="0..1" />
+          <End Role="EgitimDetayFormuGuncelleme" Type="Self.EgitimDetayFormuGuncelleme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDetayFormu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EgitimDetayFormuGuncelleme">
+              <PropertyRef Name="EgitimDetayFormuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EgitimDetayFormuSoru_EgitimDetayFormuSoruBaslik">
+          <End Role="EgitimDetayFormuSoruBaslik" Type="Self.EgitimDetayFormuSoruBaslik" Multiplicity="0..1" />
+          <End Role="EgitimDetayFormuSoru" Type="Self.EgitimDetayFormuSoru" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDetayFormuSoruBaslik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EgitimDetayFormuSoru">
+              <PropertyRef Name="EgitimDetayFormuSoruBaslikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EgitimDetayFormuSoruBaglanti_EgitimDetayFormuSoru">
+          <End Role="EgitimDetayFormuSoru" Type="Self.EgitimDetayFormuSoru" Multiplicity="0..1" />
+          <End Role="EgitimDetayFormuSoruBaglanti" Type="Self.EgitimDetayFormuSoruBaglanti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDetayFormuSoru">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EgitimDetayFormuSoruBaglanti">
+              <PropertyRef Name="EDFSoruId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EgitimDetayFormuSoruSecenekleri_EgitimDetayFormuSoru">
+          <End Role="EgitimDetayFormuSoru" Type="Self.EgitimDetayFormuSoru" Multiplicity="0..1" />
+          <End Role="EgitimDetayFormuSoruSecenekleri" Type="Self.EgitimDetayFormuSoruSecenekleri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDetayFormuSoru">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EgitimDetayFormuSoruSecenekleri">
+              <PropertyRef Name="EgitimDetayFormuSoruId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tblBlog_tblBlogKategori">
           <End Role="tblBlogKategori" Type="Self.tblBlogKategori" Multiplicity="0..1" />
           <End Role="tblBlog" Type="Self.tblBlog" Multiplicity="*" />
@@ -151,6 +366,14 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="GoTripModelStoreContainer">
+          <EntitySet Name="EgitimDetayFormu" EntityType="Self.EgitimDetayFormu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EgitimDetayFormuDetay" EntityType="Self.EgitimDetayFormuDetay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EgitimDetayFormuGuncelleme" EntityType="Self.EgitimDetayFormuGuncelleme" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EgitimDetayFormuSoru" EntityType="Self.EgitimDetayFormuSoru" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EgitimDetayFormuSoruBaglanti" EntityType="Self.EgitimDetayFormuSoruBaglanti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EgitimDetayFormuSoruBaslik" EntityType="Self.EgitimDetayFormuSoruBaslik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EgitimDetayFormuSoruSecenekleri" EntityType="Self.EgitimDetayFormuSoruSecenekleri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EgitimTuru" EntityType="Self.EgitimTuru" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tabloKurumsal" EntityType="Self.tabloKurumsal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAyarlar" EntityType="Self.tblAyarlar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblBlog" EntityType="Self.tblBlog" Schema="dbo" store:Type="Tables" />
@@ -159,6 +382,31 @@
           <EntitySet Name="tblGaleriKategori" EntityType="Self.tblGaleriKategori" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblKullanici" EntityType="Self.tblKullanici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblTurPaket" EntityType="Self.tblTurPaket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VeriKaynagi" EntityType="Self.VeriKaynagi" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_EgitimDetayFormuDetay_EgitimDetayFormu" Association="Self.FK_EgitimDetayFormuDetay_EgitimDetayFormu">
+            <End Role="EgitimDetayFormu" EntitySet="EgitimDetayFormu" />
+            <End Role="EgitimDetayFormuDetay" EntitySet="EgitimDetayFormuDetay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EgitimDetayFormuDetay_EgitimDetayFormuSoruBaglanti" Association="Self.FK_EgitimDetayFormuDetay_EgitimDetayFormuSoruBaglanti">
+            <End Role="EgitimDetayFormuSoruBaglanti" EntitySet="EgitimDetayFormuSoruBaglanti" />
+            <End Role="EgitimDetayFormuDetay" EntitySet="EgitimDetayFormuDetay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EgitimDetayFormuGuncelleme_EgitimDetayFormu" Association="Self.FK_EgitimDetayFormuGuncelleme_EgitimDetayFormu">
+            <End Role="EgitimDetayFormu" EntitySet="EgitimDetayFormu" />
+            <End Role="EgitimDetayFormuGuncelleme" EntitySet="EgitimDetayFormuGuncelleme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EgitimDetayFormuSoru_EgitimDetayFormuSoruBaslik" Association="Self.FK_EgitimDetayFormuSoru_EgitimDetayFormuSoruBaslik">
+            <End Role="EgitimDetayFormuSoruBaslik" EntitySet="EgitimDetayFormuSoruBaslik" />
+            <End Role="EgitimDetayFormuSoru" EntitySet="EgitimDetayFormuSoru" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EgitimDetayFormuSoruBaglanti_EgitimDetayFormuSoru" Association="Self.FK_EgitimDetayFormuSoruBaglanti_EgitimDetayFormuSoru">
+            <End Role="EgitimDetayFormuSoru" EntitySet="EgitimDetayFormuSoru" />
+            <End Role="EgitimDetayFormuSoruBaglanti" EntitySet="EgitimDetayFormuSoruBaglanti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EgitimDetayFormuSoruSecenekleri_EgitimDetayFormuSoru" Association="Self.FK_EgitimDetayFormuSoruSecenekleri_EgitimDetayFormuSoru">
+            <End Role="EgitimDetayFormuSoru" EntitySet="EgitimDetayFormuSoru" />
+            <End Role="EgitimDetayFormuSoruSecenekleri" EntitySet="EgitimDetayFormuSoruSecenekleri" />
+          </AssociationSet>
           <AssociationSet Name="FK_tblBlog_tblBlogKategori" Association="Self.FK_tblBlog_tblBlogKategori">
             <End Role="tblBlogKategori" EntitySet="tblBlogKategori" />
             <End Role="tblBlog" EntitySet="tblBlog" />
@@ -338,7 +586,267 @@
             <End Role="tblGaleriKategori" EntitySet="tblGaleriKategori" />
             <End Role="tblGaleri" EntitySet="tblGaleri" />
           </AssociationSet>
+          <EntitySet Name="EgitimDetayFormuSoruBaslik" EntityType="GoTripModel.EgitimDetayFormuSoruBaslik" />
+          <EntitySet Name="EgitimDetayFormuSoru" EntityType="GoTripModel.EgitimDetayFormuSoru" />
+          <AssociationSet Name="FK_EgitimDetayFormuSoru_EgitimDetayFormuSoruBaslik" Association="GoTripModel.FK_EgitimDetayFormuSoru_EgitimDetayFormuSoruBaslik">
+            <End Role="EgitimDetayFormuSoruBaslik" EntitySet="EgitimDetayFormuSoruBaslik" />
+            <End Role="EgitimDetayFormuSoru" EntitySet="EgitimDetayFormuSoru" />
+          </AssociationSet>
+          <EntitySet Name="EgitimDetayFormu" EntityType="GoTripModel.EgitimDetayFormu" />
+          <EntitySet Name="EgitimDetayFormuDetay" EntityType="GoTripModel.EgitimDetayFormuDetay" />
+          <EntitySet Name="EgitimDetayFormuSoruBaglanti" EntityType="GoTripModel.EgitimDetayFormuSoruBaglanti" />
+          <EntitySet Name="EgitimDetayFormuSoruSecenekleri" EntityType="GoTripModel.EgitimDetayFormuSoruSecenekleri" />
+          <EntitySet Name="EgitimTuru" EntityType="GoTripModel.EgitimTuru" />
+          <EntitySet Name="VeriKaynagi" EntityType="GoTripModel.VeriKaynagi" />
+          <AssociationSet Name="FK_EgitimDetayFormuDetay_EgitimDetayFormu" Association="GoTripModel.FK_EgitimDetayFormuDetay_EgitimDetayFormu">
+            <End Role="EgitimDetayFormu" EntitySet="EgitimDetayFormu" />
+            <End Role="EgitimDetayFormuDetay" EntitySet="EgitimDetayFormuDetay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EgitimDetayFormuSoruBaglanti_EgitimDetayFormuSoru" Association="GoTripModel.FK_EgitimDetayFormuSoruBaglanti_EgitimDetayFormuSoru">
+            <End Role="EgitimDetayFormuSoru" EntitySet="EgitimDetayFormuSoru" />
+            <End Role="EgitimDetayFormuSoruBaglanti" EntitySet="EgitimDetayFormuSoruBaglanti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EgitimDetayFormuSoruSecenekleri_EgitimDetayFormuSoru" Association="GoTripModel.FK_EgitimDetayFormuSoruSecenekleri_EgitimDetayFormuSoru">
+            <End Role="EgitimDetayFormuSoru" EntitySet="EgitimDetayFormuSoru" />
+            <End Role="EgitimDetayFormuSoruSecenekleri" EntitySet="EgitimDetayFormuSoruSecenekleri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EgitimDetayFormuDetay_EgitimDetayFormuSoruBaglanti" Association="GoTripModel.FK_EgitimDetayFormuDetay_EgitimDetayFormuSoruBaglanti">
+            <End Role="EgitimDetayFormuSoruBaglanti" EntitySet="EgitimDetayFormuSoruBaglanti" />
+            <End Role="EgitimDetayFormuDetay" EntitySet="EgitimDetayFormuDetay" />
+          </AssociationSet>
+          <EntitySet Name="EgitimDetayFormuGuncelleme" EntityType="GoTripModel.EgitimDetayFormuGuncelleme" />
+          <AssociationSet Name="FK_EgitimDetayFormuGuncelleme_EgitimDetayFormu" Association="GoTripModel.FK_EgitimDetayFormuGuncelleme_EgitimDetayFormu">
+            <End Role="EgitimDetayFormu" EntitySet="EgitimDetayFormu" />
+            <End Role="EgitimDetayFormuGuncelleme" EntitySet="EgitimDetayFormuGuncelleme" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="EgitimDetayFormuSoruBaslik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tanim" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Sira" Type="Int32" />
+          <Property Name="OlusturanKullanici" Type="Int32" />
+          <Property Name="OlusturanMerkez" Type="Int32" />
+          <Property Name="OlusturulmaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="GuncelleyenKullanici" Type="Int32" />
+          <Property Name="GuncelleyenMerkez" Type="Int32" />
+          <Property Name="GuncellestirilmeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Silindi" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EgitimDetayFormuSoru" Relationship="GoTripModel.FK_EgitimDetayFormuSoru_EgitimDetayFormuSoruBaslik" FromRole="EgitimDetayFormuSoruBaslik" ToRole="EgitimDetayFormuSoru" />
+        </EntityType>
+        <EntityType Name="EgitimDetayFormuSoru">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EgitimDetayFormuSoruBaslikId" Type="Int32" />
+          <Property Name="Tanim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CevapTuru" Type="Int32" />
+          <Property Name="Sira" Type="Int32" />
+          <Property Name="TxtSatirSayisi" Type="Int32" />
+          <Property Name="OlusturanKullanici" Type="Int32" />
+          <Property Name="OlusturanMerkez" Type="Int32" />
+          <Property Name="OlusturulmaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="GuncelleyenKullanici" Type="Int32" />
+          <Property Name="GuncelleyenMerkez" Type="Int32" />
+          <Property Name="GuncellestirilmeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Silindi" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EgitimDetayFormuSoruBaslik" Relationship="GoTripModel.FK_EgitimDetayFormuSoru_EgitimDetayFormuSoruBaslik" FromRole="EgitimDetayFormuSoru" ToRole="EgitimDetayFormuSoruBaslik" />
+          <NavigationProperty Name="EgitimDetayFormuSoruBaglanti" Relationship="GoTripModel.FK_EgitimDetayFormuSoruBaglanti_EgitimDetayFormuSoru" FromRole="EgitimDetayFormuSoru" ToRole="EgitimDetayFormuSoruBaglanti" />
+          <NavigationProperty Name="EgitimDetayFormuSoruSecenekleri" Relationship="GoTripModel.FK_EgitimDetayFormuSoruSecenekleri_EgitimDetayFormuSoru" FromRole="EgitimDetayFormuSoru" ToRole="EgitimDetayFormuSoruSecenekleri" />
+        </EntityType>
+        <Association Name="FK_EgitimDetayFormuSoru_EgitimDetayFormuSoruBaslik">
+          <End Type="GoTripModel.EgitimDetayFormuSoruBaslik" Role="EgitimDetayFormuSoruBaslik" Multiplicity="0..1" />
+          <End Type="GoTripModel.EgitimDetayFormuSoru" Role="EgitimDetayFormuSoru" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDetayFormuSoruBaslik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EgitimDetayFormuSoru">
+              <PropertyRef Name="EgitimDetayFormuSoruBaslikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EgitimDetayFormu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aktif" Type="Boolean" />
+          <Property Name="KapatmaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="KapatanKullaniciId" Type="Int32" />
+          <Property Name="AcmaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="AcanKullaniciId" Type="Int32" />
+          <Property Name="Tur" Type="Int32" />
+          <Property Name="OlusturanKullanici" Type="Int32" />
+          <Property Name="OlusturanMerkez" Type="Int32" />
+          <Property Name="OlusturulmaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="GuncelleyenKullanici" Type="Int32" />
+          <Property Name="GuncelleyenMerkez" Type="Int32" />
+          <Property Name="GuncellestirilmeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Silindi" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EgitimDetayFormuDetay" Relationship="GoTripModel.FK_EgitimDetayFormuDetay_EgitimDetayFormu" FromRole="EgitimDetayFormu" ToRole="EgitimDetayFormuDetay" />
+          <NavigationProperty Name="EgitimDetayFormuGuncelleme" Relationship="GoTripModel.FK_EgitimDetayFormuGuncelleme_EgitimDetayFormu" FromRole="EgitimDetayFormu" ToRole="EgitimDetayFormuGuncelleme" />
+        </EntityType>
+        <EntityType Name="EgitimDetayFormuDetay">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EgitimDetayFormuId" Type="Int32" />
+          <Property Name="Cevap" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OlusturanKullanici" Type="Int32" />
+          <Property Name="OlusturanMerkez" Type="Int32" />
+          <Property Name="OlusturulmaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="GuncelleyenKullanici" Type="Int32" />
+          <Property Name="GuncelleyenMerkez" Type="Int32" />
+          <Property Name="GuncellestirilmeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Silindi" Type="Boolean" Nullable="false" />
+          <Property Name="EgitimDetayFormuSoruBaglantiId" Type="Int32" />
+          <NavigationProperty Name="EgitimDetayFormu" Relationship="GoTripModel.FK_EgitimDetayFormuDetay_EgitimDetayFormu" FromRole="EgitimDetayFormuDetay" ToRole="EgitimDetayFormu" />
+          <NavigationProperty Name="EgitimDetayFormuSoruBaglanti" Relationship="GoTripModel.FK_EgitimDetayFormuDetay_EgitimDetayFormuSoruBaglanti" FromRole="EgitimDetayFormuDetay" ToRole="EgitimDetayFormuSoruBaglanti" />
+        </EntityType>
+        <EntityType Name="EgitimDetayFormuSoruBaglanti">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EDFSoruId" Type="Int32" />
+          <Property Name="Tur" Type="Int32" />
+          <Property Name="Aktif" Type="Boolean" />
+          <Property Name="OlusturanKullanici" Type="Int32" />
+          <Property Name="OlusturanMerkez" Type="Int32" />
+          <Property Name="OlusturulmaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="GuncelleyenKullanici" Type="Int32" />
+          <Property Name="GuncelleyenMerkez" Type="Int32" />
+          <Property Name="GuncellestirilmeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Silindi" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EgitimDetayFormuSoru" Relationship="GoTripModel.FK_EgitimDetayFormuSoruBaglanti_EgitimDetayFormuSoru" FromRole="EgitimDetayFormuSoruBaglanti" ToRole="EgitimDetayFormuSoru" />
+          <NavigationProperty Name="EgitimDetayFormuDetay" Relationship="GoTripModel.FK_EgitimDetayFormuDetay_EgitimDetayFormuSoruBaglanti" FromRole="EgitimDetayFormuSoruBaglanti" ToRole="EgitimDetayFormuDetay" />
+        </EntityType>
+        <EntityType Name="EgitimDetayFormuSoruSecenekleri">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tanim" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EgitimDetayFormuSoruId" Type="Int32" />
+          <Property Name="Sira" Type="Int32" />
+          <Property Name="OlusturanKullanici" Type="Int32" />
+          <Property Name="OlusturanMerkez" Type="Int32" />
+          <Property Name="OlusturulmaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="GuncelleyenKullanici" Type="Int32" />
+          <Property Name="GuncelleyenMerkez" Type="Int32" />
+          <Property Name="GuncellestirilmeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Silindi" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EgitimDetayFormuSoru" Relationship="GoTripModel.FK_EgitimDetayFormuSoruSecenekleri_EgitimDetayFormuSoru" FromRole="EgitimDetayFormuSoruSecenekleri" ToRole="EgitimDetayFormuSoru" />
+        </EntityType>
+        <EntityType Name="EgitimTuru">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tanim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OlusturanKullanici" Type="Int32" />
+          <Property Name="OlusturanMerkez" Type="Int32" />
+          <Property Name="OlusturulmaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="GuncelleyenKullanici" Type="Int32" />
+          <Property Name="GuncelleyenMerkez" Type="Int32" />
+          <Property Name="GuncellestirilmeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Silindi" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VeriKaynagi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tanim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OlusturanKullanici" Type="Int32" />
+          <Property Name="OlusturanMerkez" Type="Int32" />
+          <Property Name="OlusturulmaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="GuncelleyenKullanici" Type="Int32" />
+          <Property Name="GuncelleyenMerkez" Type="Int32" />
+          <Property Name="GuncellestirilmeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Silindi" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_EgitimDetayFormuDetay_EgitimDetayFormu">
+          <End Type="GoTripModel.EgitimDetayFormu" Role="EgitimDetayFormu" Multiplicity="0..1" />
+          <End Type="GoTripModel.EgitimDetayFormuDetay" Role="EgitimDetayFormuDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDetayFormu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EgitimDetayFormuDetay">
+              <PropertyRef Name="EgitimDetayFormuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EgitimDetayFormuSoruBaglanti_EgitimDetayFormuSoru">
+          <End Type="GoTripModel.EgitimDetayFormuSoru" Role="EgitimDetayFormuSoru" Multiplicity="0..1" />
+          <End Type="GoTripModel.EgitimDetayFormuSoruBaglanti" Role="EgitimDetayFormuSoruBaglanti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDetayFormuSoru">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EgitimDetayFormuSoruBaglanti">
+              <PropertyRef Name="EDFSoruId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EgitimDetayFormuSoruSecenekleri_EgitimDetayFormuSoru">
+          <End Type="GoTripModel.EgitimDetayFormuSoru" Role="EgitimDetayFormuSoru" Multiplicity="0..1" />
+          <End Type="GoTripModel.EgitimDetayFormuSoruSecenekleri" Role="EgitimDetayFormuSoruSecenekleri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDetayFormuSoru">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EgitimDetayFormuSoruSecenekleri">
+              <PropertyRef Name="EgitimDetayFormuSoruId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EgitimDetayFormuDetay_EgitimDetayFormuSoruBaglanti">
+          <End Type="GoTripModel.EgitimDetayFormuSoruBaglanti" Role="EgitimDetayFormuSoruBaglanti" Multiplicity="0..1" />
+          <End Type="GoTripModel.EgitimDetayFormuDetay" Role="EgitimDetayFormuDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDetayFormuSoruBaglanti">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EgitimDetayFormuDetay">
+              <PropertyRef Name="EgitimDetayFormuSoruBaglantiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EgitimDetayFormuGuncelleme">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EgitimDetayFormuId" Type="Int32" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OlusturanKullanici" Type="Int32" />
+          <Property Name="OlusturanMerkez" Type="Int32" />
+          <Property Name="OlusturulmaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="GuncelleyenKullanici" Type="Int32" />
+          <Property Name="GuncelleyenMerkez" Type="Int32" />
+          <Property Name="GuncellestirilmeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Silindi" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EgitimDetayFormu" Relationship="GoTripModel.FK_EgitimDetayFormuGuncelleme_EgitimDetayFormu" FromRole="EgitimDetayFormuGuncelleme" ToRole="EgitimDetayFormu" />
+        </EntityType>
+        <Association Name="FK_EgitimDetayFormuGuncelleme_EgitimDetayFormu">
+          <End Type="GoTripModel.EgitimDetayFormu" Role="EgitimDetayFormu" Multiplicity="0..1" />
+          <End Type="GoTripModel.EgitimDetayFormuGuncelleme" Role="EgitimDetayFormuGuncelleme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDetayFormu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EgitimDetayFormuGuncelleme">
+              <PropertyRef Name="EgitimDetayFormuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -471,6 +979,158 @@
                 <ScalarProperty Name="GuncelleyenKullanici" ColumnName="GuncelleyenKullanici" />
                 <ScalarProperty Name="GuncellestirilmeTarihi" ColumnName="GuncellestirilmeTarihi" />
                 <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EgitimDetayFormuSoruBaslik">
+            <EntityTypeMapping TypeName="GoTripModel.EgitimDetayFormuSoruBaslik">
+              <MappingFragment StoreEntitySet="EgitimDetayFormuSoruBaslik">
+                <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+                <ScalarProperty Name="GuncellestirilmeTarihi" ColumnName="GuncellestirilmeTarihi" />
+                <ScalarProperty Name="GuncelleyenMerkez" ColumnName="GuncelleyenMerkez" />
+                <ScalarProperty Name="GuncelleyenKullanici" ColumnName="GuncelleyenKullanici" />
+                <ScalarProperty Name="OlusturulmaTarihi" ColumnName="OlusturulmaTarihi" />
+                <ScalarProperty Name="OlusturanMerkez" ColumnName="OlusturanMerkez" />
+                <ScalarProperty Name="OlusturanKullanici" ColumnName="OlusturanKullanici" />
+                <ScalarProperty Name="Sira" ColumnName="Sira" />
+                <ScalarProperty Name="Tanim" ColumnName="Tanim" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EgitimDetayFormuSoru">
+            <EntityTypeMapping TypeName="GoTripModel.EgitimDetayFormuSoru">
+              <MappingFragment StoreEntitySet="EgitimDetayFormuSoru">
+                <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+                <ScalarProperty Name="GuncellestirilmeTarihi" ColumnName="GuncellestirilmeTarihi" />
+                <ScalarProperty Name="GuncelleyenMerkez" ColumnName="GuncelleyenMerkez" />
+                <ScalarProperty Name="GuncelleyenKullanici" ColumnName="GuncelleyenKullanici" />
+                <ScalarProperty Name="OlusturulmaTarihi" ColumnName="OlusturulmaTarihi" />
+                <ScalarProperty Name="OlusturanMerkez" ColumnName="OlusturanMerkez" />
+                <ScalarProperty Name="OlusturanKullanici" ColumnName="OlusturanKullanici" />
+                <ScalarProperty Name="TxtSatirSayisi" ColumnName="TxtSatirSayisi" />
+                <ScalarProperty Name="Sira" ColumnName="Sira" />
+                <ScalarProperty Name="CevapTuru" ColumnName="CevapTuru" />
+                <ScalarProperty Name="Tanim" ColumnName="Tanim" />
+                <ScalarProperty Name="EgitimDetayFormuSoruBaslikId" ColumnName="EgitimDetayFormuSoruBaslikId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EgitimDetayFormu">
+            <EntityTypeMapping TypeName="GoTripModel.EgitimDetayFormu">
+              <MappingFragment StoreEntitySet="EgitimDetayFormu">
+                <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+                <ScalarProperty Name="GuncellestirilmeTarihi" ColumnName="GuncellestirilmeTarihi" />
+                <ScalarProperty Name="GuncelleyenMerkez" ColumnName="GuncelleyenMerkez" />
+                <ScalarProperty Name="GuncelleyenKullanici" ColumnName="GuncelleyenKullanici" />
+                <ScalarProperty Name="OlusturulmaTarihi" ColumnName="OlusturulmaTarihi" />
+                <ScalarProperty Name="OlusturanMerkez" ColumnName="OlusturanMerkez" />
+                <ScalarProperty Name="OlusturanKullanici" ColumnName="OlusturanKullanici" />
+                <ScalarProperty Name="Tur" ColumnName="Tur" />
+                <ScalarProperty Name="AcanKullaniciId" ColumnName="AcanKullaniciId" />
+                <ScalarProperty Name="AcmaTarihi" ColumnName="AcmaTarihi" />
+                <ScalarProperty Name="KapatanKullaniciId" ColumnName="KapatanKullaniciId" />
+                <ScalarProperty Name="KapatmaTarihi" ColumnName="KapatmaTarihi" />
+                <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EgitimDetayFormuDetay">
+            <EntityTypeMapping TypeName="GoTripModel.EgitimDetayFormuDetay">
+              <MappingFragment StoreEntitySet="EgitimDetayFormuDetay">
+                <ScalarProperty Name="EgitimDetayFormuSoruBaglantiId" ColumnName="EgitimDetayFormuSoruBaglantiId" />
+                <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+                <ScalarProperty Name="GuncellestirilmeTarihi" ColumnName="GuncellestirilmeTarihi" />
+                <ScalarProperty Name="GuncelleyenMerkez" ColumnName="GuncelleyenMerkez" />
+                <ScalarProperty Name="GuncelleyenKullanici" ColumnName="GuncelleyenKullanici" />
+                <ScalarProperty Name="OlusturulmaTarihi" ColumnName="OlusturulmaTarihi" />
+                <ScalarProperty Name="OlusturanMerkez" ColumnName="OlusturanMerkez" />
+                <ScalarProperty Name="OlusturanKullanici" ColumnName="OlusturanKullanici" />
+                <ScalarProperty Name="Cevap" ColumnName="Cevap" />
+                <ScalarProperty Name="EgitimDetayFormuId" ColumnName="EgitimDetayFormuId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EgitimDetayFormuSoruBaglanti">
+            <EntityTypeMapping TypeName="GoTripModel.EgitimDetayFormuSoruBaglanti">
+              <MappingFragment StoreEntitySet="EgitimDetayFormuSoruBaglanti">
+                <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+                <ScalarProperty Name="GuncellestirilmeTarihi" ColumnName="GuncellestirilmeTarihi" />
+                <ScalarProperty Name="GuncelleyenMerkez" ColumnName="GuncelleyenMerkez" />
+                <ScalarProperty Name="GuncelleyenKullanici" ColumnName="GuncelleyenKullanici" />
+                <ScalarProperty Name="OlusturulmaTarihi" ColumnName="OlusturulmaTarihi" />
+                <ScalarProperty Name="OlusturanMerkez" ColumnName="OlusturanMerkez" />
+                <ScalarProperty Name="OlusturanKullanici" ColumnName="OlusturanKullanici" />
+                <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+                <ScalarProperty Name="Tur" ColumnName="Tur" />
+                <ScalarProperty Name="EDFSoruId" ColumnName="EDFSoruId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EgitimDetayFormuSoruSecenekleri">
+            <EntityTypeMapping TypeName="GoTripModel.EgitimDetayFormuSoruSecenekleri">
+              <MappingFragment StoreEntitySet="EgitimDetayFormuSoruSecenekleri">
+                <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+                <ScalarProperty Name="GuncellestirilmeTarihi" ColumnName="GuncellestirilmeTarihi" />
+                <ScalarProperty Name="GuncelleyenMerkez" ColumnName="GuncelleyenMerkez" />
+                <ScalarProperty Name="GuncelleyenKullanici" ColumnName="GuncelleyenKullanici" />
+                <ScalarProperty Name="OlusturulmaTarihi" ColumnName="OlusturulmaTarihi" />
+                <ScalarProperty Name="OlusturanMerkez" ColumnName="OlusturanMerkez" />
+                <ScalarProperty Name="OlusturanKullanici" ColumnName="OlusturanKullanici" />
+                <ScalarProperty Name="Sira" ColumnName="Sira" />
+                <ScalarProperty Name="EgitimDetayFormuSoruId" ColumnName="EgitimDetayFormuSoruId" />
+                <ScalarProperty Name="Tanim" ColumnName="Tanim" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EgitimTuru">
+            <EntityTypeMapping TypeName="GoTripModel.EgitimTuru">
+              <MappingFragment StoreEntitySet="EgitimTuru">
+                <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+                <ScalarProperty Name="GuncellestirilmeTarihi" ColumnName="GuncellestirilmeTarihi" />
+                <ScalarProperty Name="GuncelleyenMerkez" ColumnName="GuncelleyenMerkez" />
+                <ScalarProperty Name="GuncelleyenKullanici" ColumnName="GuncelleyenKullanici" />
+                <ScalarProperty Name="OlusturulmaTarihi" ColumnName="OlusturulmaTarihi" />
+                <ScalarProperty Name="OlusturanMerkez" ColumnName="OlusturanMerkez" />
+                <ScalarProperty Name="OlusturanKullanici" ColumnName="OlusturanKullanici" />
+                <ScalarProperty Name="Tanim" ColumnName="Tanim" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VeriKaynagi">
+            <EntityTypeMapping TypeName="GoTripModel.VeriKaynagi">
+              <MappingFragment StoreEntitySet="VeriKaynagi">
+                <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+                <ScalarProperty Name="GuncellestirilmeTarihi" ColumnName="GuncellestirilmeTarihi" />
+                <ScalarProperty Name="GuncelleyenMerkez" ColumnName="GuncelleyenMerkez" />
+                <ScalarProperty Name="GuncelleyenKullanici" ColumnName="GuncelleyenKullanici" />
+                <ScalarProperty Name="OlusturulmaTarihi" ColumnName="OlusturulmaTarihi" />
+                <ScalarProperty Name="OlusturanMerkez" ColumnName="OlusturanMerkez" />
+                <ScalarProperty Name="OlusturanKullanici" ColumnName="OlusturanKullanici" />
+                <ScalarProperty Name="Tanim" ColumnName="Tanim" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EgitimDetayFormuGuncelleme">
+            <EntityTypeMapping TypeName="GoTripModel.EgitimDetayFormuGuncelleme">
+              <MappingFragment StoreEntitySet="EgitimDetayFormuGuncelleme">
+                <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+                <ScalarProperty Name="GuncellestirilmeTarihi" ColumnName="GuncellestirilmeTarihi" />
+                <ScalarProperty Name="GuncelleyenMerkez" ColumnName="GuncelleyenMerkez" />
+                <ScalarProperty Name="GuncelleyenKullanici" ColumnName="GuncelleyenKullanici" />
+                <ScalarProperty Name="OlusturulmaTarihi" ColumnName="OlusturulmaTarihi" />
+                <ScalarProperty Name="OlusturanMerkez" ColumnName="OlusturanMerkez" />
+                <ScalarProperty Name="OlusturanKullanici" ColumnName="OlusturanKullanici" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="EgitimDetayFormuId" ColumnName="EgitimDetayFormuId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

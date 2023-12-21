@@ -61,10 +61,17 @@
     <Compile Include="Modules\Seyehat\Repository\AyarlarRepository.cs" />
     <Compile Include="Modules\Seyehat\Repository\BlogKategoriRepository.cs" />
     <Compile Include="Modules\Seyehat\Repository\BlogRepository.cs" />
+    <Compile Include="Modules\Seyehat\Repository\EgitimDetayFormuDetayRepository.cs" />
+    <Compile Include="Modules\Seyehat\Repository\EgitimDetayFormuRepository.cs" />
+    <Compile Include="Modules\Seyehat\Repository\EgitimDetayFormuSoruBaglantiRepository.cs" />
+    <Compile Include="Modules\Seyehat\Repository\EgitimDetayFormuSoruBaslikRepository.cs" />
+    <Compile Include="Modules\Seyehat\Repository\EgitimDetayFormuSoruRepository.cs" />
+    <Compile Include="Modules\Seyehat\Repository\EgitimDetayFormuSoruSecenekleriRepository.cs" />
     <Compile Include="Modules\Seyehat\Repository\GaleriKategoriRepository.cs" />
     <Compile Include="Modules\Seyehat\Repository\GaleriRepository.cs" />
     <Compile Include="Modules\Seyehat\Repository\KullaniciRepository.cs" />
     <Compile Include="Modules\Seyehat\Repository\KurumsalRepository.cs" />
+    <Compile Include="Modules\Seyehat\Repository\EgitimDetayFormuGuncellemeRepository.cs" />
     <Compile Include="Modules\Seyehat\Repository\TurPaketRepository.cs" />
     <Compile Include="Modules\Seyehat\UnitOfWork\ISeyehatUnitOfWork.cs">
       <AutoGen>True</AutoGen>

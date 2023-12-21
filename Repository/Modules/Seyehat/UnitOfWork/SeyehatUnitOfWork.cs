@@ -37,6 +37,15 @@ namespace Repository.Modules.Seyehat.UnitOfWork
     	    _tblGaleriKategoriRepository = GetLazyRepository<tblGaleriKategori>(_context);
     	    _tblKullaniciRepository = GetLazyRepository<tblKullanici>(_context);
     	    _tblTurPaketRepository = GetLazyRepository<tblTurPaket>(_context);
+    	    _egitimDetayFormuSoruBaslikRepository = GetLazyRepository<EgitimDetayFormuSoruBaslik>(_context);
+    	    _egitimDetayFormuSoruRepository = GetLazyRepository<EgitimDetayFormuSoru>(_context);
+    	    _egitimDetayFormuRepository = GetLazyRepository<EgitimDetayFormu>(_context);
+    	    _egitimDetayFormuDetayRepository = GetLazyRepository<EgitimDetayFormuDetay>(_context);
+    	    _egitimDetayFormuSoruBaglantiRepository = GetLazyRepository<EgitimDetayFormuSoruBaglanti>(_context);
+    	    _egitimDetayFormuSoruSecenekleriRepository = GetLazyRepository<EgitimDetayFormuSoruSecenekleri>(_context);
+    	    _egitimTuruRepository = GetLazyRepository<EgitimTuru>(_context);
+    	    _veriKaynagiRepository = GetLazyRepository<VeriKaynagi>(_context);
+    	    _egitimDetayFormuGuncellemeRepository = GetLazyRepository<EgitimDetayFormuGuncelleme>(_context);
 
             #endregion
 
@@ -54,6 +63,15 @@ namespace Repository.Modules.Seyehat.UnitOfWork
     	private readonly Lazy<IRepository<tblGaleriKategori>> _tblGaleriKategoriRepository;
     	private readonly Lazy<IRepository<tblKullanici>> _tblKullaniciRepository;
     	private readonly Lazy<IRepository<tblTurPaket>> _tblTurPaketRepository;
+    	private readonly Lazy<IRepository<EgitimDetayFormuSoruBaslik>> _egitimDetayFormuSoruBaslikRepository;
+    	private readonly Lazy<IRepository<EgitimDetayFormuSoru>> _egitimDetayFormuSoruRepository;
+    	private readonly Lazy<IRepository<EgitimDetayFormu>> _egitimDetayFormuRepository;
+    	private readonly Lazy<IRepository<EgitimDetayFormuDetay>> _egitimDetayFormuDetayRepository;
+    	private readonly Lazy<IRepository<EgitimDetayFormuSoruBaglanti>> _egitimDetayFormuSoruBaglantiRepository;
+    	private readonly Lazy<IRepository<EgitimDetayFormuSoruSecenekleri>> _egitimDetayFormuSoruSecenekleriRepository;
+    	private readonly Lazy<IRepository<EgitimTuru>> _egitimTuruRepository;
+    	private readonly Lazy<IRepository<VeriKaynagi>> _veriKaynagiRepository;
+    	private readonly Lazy<IRepository<EgitimDetayFormuGuncelleme>> _egitimDetayFormuGuncellemeRepository;
 
         #endregion
 
@@ -98,6 +116,51 @@ namespace Repository.Modules.Seyehat.UnitOfWork
     	public virtual IRepository<tblTurPaket> tblTurPaket
         {
             get { return _tblTurPaketRepository.Value; }
+        }
+    
+    	public virtual IRepository<EgitimDetayFormuSoruBaslik> EgitimDetayFormuSoruBaslik
+        {
+            get { return _egitimDetayFormuSoruBaslikRepository.Value; }
+        }
+    
+    	public virtual IRepository<EgitimDetayFormuSoru> EgitimDetayFormuSoru
+        {
+            get { return _egitimDetayFormuSoruRepository.Value; }
+        }
+    
+    	public virtual IRepository<EgitimDetayFormu> EgitimDetayFormu
+        {
+            get { return _egitimDetayFormuRepository.Value; }
+        }
+    
+    	public virtual IRepository<EgitimDetayFormuDetay> EgitimDetayFormuDetay
+        {
+            get { return _egitimDetayFormuDetayRepository.Value; }
+        }
+    
+    	public virtual IRepository<EgitimDetayFormuSoruBaglanti> EgitimDetayFormuSoruBaglanti
+        {
+            get { return _egitimDetayFormuSoruBaglantiRepository.Value; }
+        }
+    
+    	public virtual IRepository<EgitimDetayFormuSoruSecenekleri> EgitimDetayFormuSoruSecenekleri
+        {
+            get { return _egitimDetayFormuSoruSecenekleriRepository.Value; }
+        }
+    
+    	public virtual IRepository<EgitimTuru> EgitimTuru
+        {
+            get { return _egitimTuruRepository.Value; }
+        }
+    
+    	public virtual IRepository<VeriKaynagi> VeriKaynagi
+        {
+            get { return _veriKaynagiRepository.Value; }
+        }
+    
+    	public virtual IRepository<EgitimDetayFormuGuncelleme> EgitimDetayFormuGuncelleme
+        {
+            get { return _egitimDetayFormuGuncellemeRepository.Value; }
         }
 
         #endregion

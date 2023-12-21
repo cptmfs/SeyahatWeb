@@ -43,10 +43,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DTO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
@@ -522,7 +518,54 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Yönetim\EgitimDetayFormu.aspx" />
+    <Content Include="Yönetim\EgitimDetaySoru.aspx" />
+    <Content Include="Yönetim\EgitimDetaySoruBaglanti.aspx" />
+    <Content Include="Yönetim\EgitimDetaySoruBaslik.aspx" />
+    <Content Include="Yönetim\EgitimDetaySoruSecenekleri.aspx" />
+    <Content Include="Yönetim\EgitimTuruTanim.aspx" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\.gitignore" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\conf\karma.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\demo.jpg" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\dist\jquery.tree-multiselect.css" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\dist\jquery.tree-multiselect.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\dist\jquery.tree-multiselect.min.css" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\dist\jquery.tree-multiselect.min.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\Gruntfile.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\src\tree-multiselect.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\src\tree-multiselect\ast\common.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\src\tree-multiselect\ast\index.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\src\tree-multiselect\ast\item.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\src\tree-multiselect\ast\section.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\src\tree-multiselect\main.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\src\tree-multiselect\search.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\src\tree-multiselect\tree.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\src\tree-multiselect\ui-builder.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\src\tree-multiselect\utility\array.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\src\tree-multiselect\utility\dom.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\src\tree-multiselect\utility\index.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\integration\common.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\integration\initial-load.test.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\integration\interactivity.test.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\integration\options.test.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\integration\reloading.test.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\integration\removing.test.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\integration\search.test.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\integration\section-checkboxes.test.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\integration\section-selections.test.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\integration\single-selections.test.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\test-performance.html" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\test.html" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\unit\utility.test.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\vendor\jquery-1.11.3.min.js" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\test\vendor\jquery-ui.min.js" />
     <Content Include="Yönetim\TextFile1.txt" />
+    <Content Include="Yönetim\VeriKaynagiTanim.aspx" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -1754,6 +1797,8 @@
     <Content Include="Yönetim\doc\js\ios-orientationchange-fix.js" />
     <Content Include="Yönetim\doc\js\jquery-1.11.2.js" />
     <Content Include="Yönetim\doc\js\jquery-1.11.2.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
     <None Include="Yönetim\doc\js\jquery-2.0.0-vsdoc.js" />
     <Content Include="Yönetim\doc\js\jquery-migrate.min.js" />
     <Content Include="Yönetim\doc\js\jquery-ui.js" />
@@ -2717,6 +2762,17 @@
     <Content Include="Yönetim\Kurumsal.aspx" />
     <Content Include="Yönetim\PaketDuzenleSil.aspx" />
     <Content Include="Yönetim\PaketEkle.aspx" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\.babelrc" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\.circleci\config.yml" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\.eslintrc.yml" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\.npmignore" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\bower.json" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\LICENSE" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\package-lock.json" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\package.json" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\README.md" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\release.sh" />
+    <Content Include="Yönetim\jQuery-Plugin-For-Multi-Selectable-Tree-Structure-Tree-Multiselect\sass\style.scss" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Altsayfa.Master.cs">
@@ -2850,6 +2906,48 @@
     <Compile Include="Yönetim\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Yönetim\EgitimDetayFormu.aspx.cs">
+      <DependentUpon>EgitimDetayFormu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yönetim\EgitimDetayFormu.aspx.designer.cs">
+      <DependentUpon>EgitimDetayFormu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yönetim\EgitimDetaySoru.aspx.cs">
+      <DependentUpon>EgitimDetaySoru.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yönetim\EgitimDetaySoru.aspx.designer.cs">
+      <DependentUpon>EgitimDetaySoru.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yönetim\EgitimDetaySoruBaglanti.aspx.cs">
+      <DependentUpon>EgitimDetaySoruBaglanti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yönetim\EgitimDetaySoruBaglanti.aspx.designer.cs">
+      <DependentUpon>EgitimDetaySoruBaglanti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yönetim\EgitimDetaySoruBaslik.aspx.cs">
+      <DependentUpon>EgitimDetaySoruBaslik.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yönetim\EgitimDetaySoruBaslik.aspx.designer.cs">
+      <DependentUpon>EgitimDetaySoruBaslik.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yönetim\EgitimDetaySoruSecenekleri.aspx.cs">
+      <DependentUpon>EgitimDetaySoruSecenekleri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yönetim\EgitimDetaySoruSecenekleri.aspx.designer.cs">
+      <DependentUpon>EgitimDetaySoruSecenekleri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yönetim\EgitimTuruTanim.aspx.cs">
+      <DependentUpon>EgitimTuruTanim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yönetim\EgitimTuruTanim.aspx.designer.cs">
+      <DependentUpon>EgitimTuruTanim.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Yönetim\GaleriEkleSil.aspx.cs">
       <DependentUpon>GaleriEkleSil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2884,6 +2982,13 @@
     </Compile>
     <Compile Include="Yönetim\PaketEkle.aspx.designer.cs">
       <DependentUpon>PaketEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yönetim\VeriKaynagiTanim.aspx.cs">
+      <DependentUpon>VeriKaynagiTanim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yönetim\VeriKaynagiTanim.aspx.designer.cs">
+      <DependentUpon>VeriKaynagiTanim.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -3303,6 +3408,10 @@
     <Folder Include="Yönetim\doc\content\ckeditor_1\skins\moonocolor\images\hidpi\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{78A141B5-6E11-4B1F-803F-32A6F703039F}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{4C3FE3A4-1E37-4264-BD2E-43F44D5A7AA3}</Project>
       <Name>Entity</Name>
