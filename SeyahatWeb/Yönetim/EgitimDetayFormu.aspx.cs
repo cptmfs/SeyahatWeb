@@ -46,6 +46,8 @@ namespace SeyahatWeb.Yönetim
             this.Presenter.LabelDoldur();
             drpMerkez.SelectedValue = SessionHelper.KullaniciAdi.ToString();
             ViewState["Liste"] = "Default";
+            this.Presenter.EgitimDetayFormuListele();
+
         }
 
         protected void gridEgitimDetayFormu_PageIndexChanging(object sender, GridViewPageEventArgs e)

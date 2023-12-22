@@ -51,12 +51,14 @@
     <Compile Include="Modules\Seyehat\EgitimDetayFormuSoruBaslikDTO.cs" />
     <Compile Include="Modules\Seyehat\EgitimDetayFormuSoruDTO.cs" />
     <Compile Include="Modules\Seyehat\EgitimDetayFormuSoruSecenekleriDTO.cs" />
+    <Compile Include="Modules\Seyehat\EgitimTuruDTO.cs" />
     <Compile Include="Modules\Seyehat\GaleriDTO.cs" />
     <Compile Include="Modules\Seyehat\GaleriKategoriDTO.cs" />
     <Compile Include="Modules\Seyehat\KullaniciDTO.cs" />
     <Compile Include="Modules\Seyehat\KurumsalDTO.cs" />
     <Compile Include="Modules\Seyehat\TanimDTO.cs" />
     <Compile Include="Modules\Seyehat\TurPaketDTO.cs" />
+    <Compile Include="Modules\Seyehat\VeriKaynagiDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

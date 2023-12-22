@@ -44,29 +44,35 @@
     <Compile Include="Modules\Seyehat\Interface\IAyarView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IBlogKategoriView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IBlogView.cs" />
+    <Compile Include="Modules\Seyehat\Interface\IEgitimDetayFormuDetayView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IEgitimDetayFormuSoruBaglantiView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IEgitimDetayFormuSoruBaslikView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IEgitimDetayFormuSoruSecenekleriView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IEgitimDetayFormuSoruView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IEgitimDetayFormuView.cs" />
+    <Compile Include="Modules\Seyehat\Interface\IEgitimTuruView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IGaleriKategoriView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IGaleriView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IKullaniciView.cs" />
     <Compile Include="Modules\Seyehat\Interface\IKurumsalView.cs" />
     <Compile Include="Modules\Seyehat\Interface\ITurPaketView.cs" />
+    <Compile Include="Modules\Seyehat\Interface\IVeriKaynagiView.cs" />
     <Compile Include="Modules\Seyehat\Presenter\AyarlarPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\BlogKategoriPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\BlogPresenter.cs" />
+    <Compile Include="Modules\Seyehat\Presenter\EgitimDetayFormuDetayPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\EgitimDetayFormuPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\EgitimDetayFormuSoruBaglantiPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\EgitimDetayFormuSoruBaslikPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\EgitimDetayFormuSoruPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\EgitimDetayFormuSoruSecenekleriPresenter.cs" />
+    <Compile Include="Modules\Seyehat\Presenter\EgitimTuruPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\GaleriKategoriPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\GaleriPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\KullaniciPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\KurumsalPresenter.cs" />
     <Compile Include="Modules\Seyehat\Presenter\TurPaketPresenter.cs" />
+    <Compile Include="Modules\Seyehat\Presenter\VeriKaynagiPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

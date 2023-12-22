@@ -86,10 +86,9 @@
         </div>
     </div>
 
+                <script src="combo-tree-master/comboTreePlugin.js"></script>
 
     <script type="text/javascript">
-        var hiddenSecilenEgitimDetayFormuSoruBaglantiId = $("#<%= hiddenSecilenEgitimDetayFormuSoruBaglantiId.ClientID %>");
-
 
 
 
@@ -126,10 +125,9 @@
             }
         }
 
-        $("#anchorSoruListesiModalCloseButton")
-            .click(function () {
-                Temizle();
-            });
+        $("#anchorSoruListesiModalCloseButton").click(function () {
+            Temizle();
+        });
 
 
         function PrepareModalPopup(islemTipi) {
@@ -151,13 +149,13 @@
             if (enableElements) {
                 $("#anchorSoruListesiModal *")
                     .not(":input[type=submit]")
-                    .not("button")
+                    .not("input[type=button]")
                     .removeAttr("disabled");
             }
             else
                 $("#anchorSoruListesiModal *")
                     .not(":input[type=submit]")
-                    .not("button")
+                    .not("input[type=button]")
                     .prop("disabled", "disabled");
         }
 
@@ -168,6 +166,7 @@
 
             var TurId = $(element).attr("data-turId");
             var islemTipianchorKonuListesi = $(element).attr("data-islemtipi");
+            var hiddenSecilenEgitimDetayFormuSoruBaglantiId = $("#<%= hiddenSecilenEgitimDetayFormuSoruBaglantiId.ClientID %>");
 
             hiddenSecilenEgitimDetayFormuSoruBaglantiId.val(TurId);
             turId = hiddenSecilenEgitimDetayFormuSoruBaglantiId.val();
@@ -219,8 +218,8 @@
             $("#soruList input")
                 .not(":input[type=submit], :input[type=button], :input[type=checkbox]")
                 .val("");
-            $('.tree-multiselect').children().remove();
-            $('.tree-multiselect').remove();
+            $('.tree - multiselect').children().remove(); 
+            $('.tree - multiselect').remove();
             $('select#konuListesi').html('');
             soruListesi = [];
             var myModal = new bootstrap.Modal(document.getElementById("anchorSoruListesiModal"), {});
@@ -252,11 +251,9 @@
 
 
                     $.each(soruListesi, function (index, value) {
-
                         $('select#konuListesi option[value="' + value + '"]').attr('selected', '');
 
                     });
-
 
                     $('select#konuListesi').treeMultiselect({
                         sortable: true,
@@ -265,7 +262,6 @@
                         singleSelection: true,
                         allowBatchSelection: false,
                         searchable: true
-
                     });
                 },
 

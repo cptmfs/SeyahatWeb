@@ -58,7 +58,7 @@
                 
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <img alt="" title="Güncellemeler" style="cursor: pointer" src="/img/details_open.png" class="openImage" data-id='<%# Eval("Id") %>' />
+                        <img alt="" title="Güncellemeler" style="cursor: pointer" src="../../images/details_open.png" class="openImage" data-id='<%# Eval("Id") %>' />
                         <asp:Panel ID="pnlOrders" runat="server" Style="display: none">
                         </asp:Panel>
                     </ItemTemplate>
@@ -68,11 +68,6 @@
                   <asp:BoundField DataField="SiraNo" HeaderText="Sıra No" SortExpression="SiraNo"
                     NullDisplayText="-">
                     <ItemStyle Width="5%" HorizontalAlign="center" VerticalAlign="Middle" />
-                </asp:BoundField>
-
-                  <asp:BoundField DataField="MerkezAciklama" HeaderText="Merkez Adı" SortExpression="MerkezAciklama"
-                    NullDisplayText="-">
-                    <ItemStyle Width="20%" HorizontalAlign="center" VerticalAlign="Middle" />
                 </asp:BoundField>
                   <asp:BoundField DataField="TurAciklama" HeaderText="OBF Giriş Seçeneği" SortExpression="TurAciklama"
                     NullDisplayText="-">

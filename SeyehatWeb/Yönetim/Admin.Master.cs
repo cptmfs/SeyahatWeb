@@ -26,7 +26,9 @@ namespace SeyehatWeb.Yönetim
 
         protected void btnCikis_Click1(object sender, EventArgs e)
         {
-            
+            Session.Remove("Kullanici");
+            Session.Abandon();
+            Response.Redirect("~/LoginPage.aspx");
         }
 
         protected void btnCik_Click(object sender, EventArgs e)

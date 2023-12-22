@@ -523,7 +523,13 @@
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Yönetim\combo-tree-master\assets\down-arrow.svg" />
+    <Content Include="Yönetim\combo-tree-master\assets\minus.svg" />
+    <Content Include="Yönetim\combo-tree-master\assets\plus.svg" />
+    <Content Include="Yönetim\combo-tree-master\comboTreePlugin.js" />
+    <Content Include="Yönetim\combo-tree-master\comboTreeStyle.css" />
     <Content Include="Yönetim\EgitimDetayFormu.aspx" />
+    <Content Include="Yönetim\EgitimDetayFormuDetay.aspx" />
     <Content Include="Yönetim\EgitimDetaySoru.aspx" />
     <Content Include="Yönetim\EgitimDetaySoruBaglanti.aspx" />
     <Content Include="Yönetim\EgitimDetaySoruBaslik.aspx" />
@@ -2912,6 +2918,13 @@
     </Compile>
     <Compile Include="Yönetim\EgitimDetayFormu.aspx.designer.cs">
       <DependentUpon>EgitimDetayFormu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yönetim\EgitimDetayFormuDetay.aspx.cs">
+      <DependentUpon>EgitimDetayFormuDetay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yönetim\EgitimDetayFormuDetay.aspx.designer.cs">
+      <DependentUpon>EgitimDetayFormuDetay.aspx</DependentUpon>
     </Compile>
     <Compile Include="Yönetim\EgitimDetaySoru.aspx.cs">
       <DependentUpon>EgitimDetaySoru.aspx</DependentUpon>

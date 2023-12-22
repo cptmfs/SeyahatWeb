@@ -217,7 +217,7 @@ x</button>
 
             $.ajax({
                 type: "POST",
-                url: "EgitimDetayFormuSoru.aspx/EgitimDetayFormuSoruGetir",
+                url: "EgitimDetaySoru.aspx/EgitimDetayFormuSoruGetir",
                 data: "{'EgitimDetayFormuSoruId':" + EgitimDetayFormuSoruId + "}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",

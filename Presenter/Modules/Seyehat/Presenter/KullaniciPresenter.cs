@@ -41,17 +41,16 @@ namespace Presenter.Modules.SeyehatWeb.Presenter
             View.KullaniciListe = KullaniciService.KullaniciListele();
         }
 
-        public bool KullaniciKontrol(string userName , string password)
+        public Tuple<int,bool> KullaniciKontrol(string userName , string password)
         {
             var kullanici = KullaniciService.KullaniciFiltrele(userName).FirstOrDefault();
-
             if (kullanici.Password==password)
             {
-                 return true;
+                 return new Tuple<int,bool>(kullanici.Id, true);
             }
             else
             {
-                return false;
+                return new Tuple<int, bool>(kullanici.Id, false);
             }
         }
 

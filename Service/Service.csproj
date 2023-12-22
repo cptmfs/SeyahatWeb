@@ -51,11 +51,13 @@
     <Compile Include="Modules\Seyehat\EgitimDetayFormuSoruBaslikService.cs" />
     <Compile Include="Modules\Seyehat\EgitimDetayFormuSoruSecenekleriService.cs" />
     <Compile Include="Modules\Seyehat\EgitimDetayFormuSoruService.cs" />
+    <Compile Include="Modules\Seyehat\EgitimTuruService.cs" />
     <Compile Include="Modules\Seyehat\GaleriKategoriService.cs" />
     <Compile Include="Modules\Seyehat\GaleriService.cs" />
     <Compile Include="Modules\Seyehat\KullaniciService.cs" />
     <Compile Include="Modules\Seyehat\KurumsalService.cs" />
     <Compile Include="Modules\Seyehat\TurPaketService.cs" />
+    <Compile Include="Modules\Seyehat\VeriKaynagiService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

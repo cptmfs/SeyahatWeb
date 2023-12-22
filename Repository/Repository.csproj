@@ -67,6 +67,7 @@
     <Compile Include="Modules\Seyehat\Repository\EgitimDetayFormuSoruBaslikRepository.cs" />
     <Compile Include="Modules\Seyehat\Repository\EgitimDetayFormuSoruRepository.cs" />
     <Compile Include="Modules\Seyehat\Repository\EgitimDetayFormuSoruSecenekleriRepository.cs" />
+    <Compile Include="Modules\Seyehat\Repository\EgitimTuruRepository.cs" />
     <Compile Include="Modules\Seyehat\Repository\GaleriKategoriRepository.cs" />
     <Compile Include="Modules\Seyehat\Repository\GaleriRepository.cs" />
     <Compile Include="Modules\Seyehat\Repository\KullaniciRepository.cs" />
@@ -83,6 +84,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SeyehatUnitOfWork.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Seyehat\Repository\VeriKaynagiRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

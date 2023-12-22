@@ -1,4 +1,5 @@
 ﻿using DTO.Modules.SeyehatWeb;
+using Infrastructure.Helper;
 using Presenter.Modules.SeyehatWeb.Interface;
 using Presenter.Modules.SeyehatWeb.Presenter;
 using System;
@@ -27,9 +28,11 @@ namespace SeyehatWeb
         {
             var sonuc = Presenter.KullaniciKontrol(UserName, Password);
             //Session["AuthToken"] = guid;
-            if (sonuc == true)
+            if (sonuc.Item2 == true)
             {
                 Session["Kullanici"] = UserName.ToString();
+                SessionHelper.KullaniciId = sonuc.Item1;
+
                 Response.Redirect("~/Yönetim/Default.aspx");
             }
             else
