@@ -58,7 +58,7 @@
                 
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <img alt="" title="Güncellemeler" style="cursor: pointer" src="../../images/details_open.png" class="openImage" data-id='<%# Eval("Id") %>' />
+                        <img alt="" title="Güncellemeler" style="cursor: pointer" src="doc/img/details_open.png" class="openImage" data-id='<%# Eval("Id") %>' />
                         <asp:Panel ID="pnlOrders" runat="server" Style="display: none">
                         </asp:Panel>
                     </ItemTemplate>
@@ -95,24 +95,23 @@
                             data-id='<%# Eval("Id") %>'  data-kapatTarih='<%# Eval("KapatmaTarihi") %>'  data-kapatan='<%# Eval("KapatanKullaniciAciklama") %>'  
                             data-acmaTarih='<%# Eval("AcmaTarihi") %>'  data-acan='<%# Eval("AcanKullaniciAciklama") %>' onclick="EgitimDetayFormu(this);"
                             href="#EgitimDetayFormuModal" style="padding-left: 8px;" data-islemtipi="kayitDetay2">
-                            <img src="../../images/gCons/lock.png" alt="Süreci Sonlandır/Tekrar Başlat" runat="server" id="acKapatIkon" /></a>
-                                               
+                            <img src="doc/img/gCons/lock.png" alt="Süreci Sonlandır/Tekrar Başlat" runat="server" id="acKapatIkon" /></a>
                          <a data-bs-toggle="modal" data-bs-backdrop="static"
                             id="A1" runat="server" title="Süreç Sonu Değerlendirme Raporu Ekle"
                             href="#EgitimDetayFormuGuncellemeModal" style="padding-left: 8px;" data-formid='<%# Eval("Id") %>' onclick="EgitimDetayFormuGuncelleme(this)" data-islemtipi="yeniKayit2">
-                            <img src="../../images/gCons/add-item.png" alt="Süreç Sonu Değerlendirme Raporu Ekle" /></a>
+                            <img src="doc/img/gCons/add-item.png" alt="Süreç Sonu Değerlendirme Raporu Ekle" /></a>
                         
                         <a id="A4" title="Eğitim Detay Formu Detayı"
                                         href='<%# String.Format("EgitimDetayFormuDetay.aspx?olayBilgiFormuId={0}", Eval("Id"))%>'
                                         style="padding-left: 8px;">
-                                        <img src="../../images/gCons/processing.png" alt="Eğitim Detay Formu Detayı" /></a>
+                                        <img src="doc/img/gCons/processing.png" alt="Eğitim Detay Formu Detayı" /></a>
 
                         <a data-bs-toggle="modal" data-bs-backdrop="static"
                             id="A3" runat="server" title="Sil" data-id='<%# Eval("Id") %>'  data-kapatTarih='<%# Eval("KapatmaTarihi") %>'  data-kapatan='<%# Eval("KapatanKullaniciAciklama") %>'  
                             data-acmaTarih='<%# Eval("AcmaTarihi") %>'  data-acan='<%# Eval("AcanKullaniciAciklama") %>' 
                              onclick="EgitimDetayFormu(this);"
                             href="#EgitimDetayFormuModal" style="padding-left: 8px;" data-islemtipi="kayitSil">
-                            <img src="../../images/gCons/recycle-full.png" alt="Sil" /></a>
+                            <img src="doc/img/gCons/recycle-full.png" alt="Sil" /></a>
                                                
                     
 
@@ -133,11 +132,11 @@
             
             <h3>
                 <span class="yeniKayit">
-                    <img src="../../images/gCons/add-item.png" alt="" />Yeni Kayıt</span>
+                    <img src="doc/img/gCons/add-item.png" alt="" />Yeni Kayıt</span>
                  <span class="kayitDetay2">
-                    <img src="../../images/gCons/addressbook.png" alt="" />Kayıt Detayı</span>
+                    <img src="doc/img/gCons/addressbook.png" alt="" />Kayıt Detayı</span>
                 <span class="kayitSil">
-                        <img src="../../images/gCons/recycle-full.png" alt="" />Kayıt Sil</span>
+                        <img src="doc/img/gCons/recycle-full.png" alt="" />Kayıt Sil</span>
             </h3>
             <button class="close" data-bs-dismiss="modal" id="EgitimDetayFormuModalCloseButton">
                 ×</button>
@@ -249,14 +248,14 @@
             
             <h3>
                 <span class="yeniKayit2">
-                    <img src="../../img/gCons/add-item.png" alt="" />Yeni Kayıt</span>
+                    <img src="doc/img/gCons/add-item.png" alt="" />Yeni Kayıt</span>
                    <span class="kayitDetay">
-                    <img src="../../img/gCons/addressbook.png" alt="" />Kayıt Detayı</span>
+                    <img src="doc/img/gCons/addressbook.png" alt="" />Kayıt Detayı</span>
                <span class="kayitGuncelle">
-                    <img src="../../img/gCons/edit.png" alt="" />Kayıt Güncelle</span>
+                    <img src="doc/img/gCons/edit.png" alt="" />Kayıt Güncelle</span>
 
                 <span class="kayitSil2">
-                        <img src="../../img/gCons/recycle-full.png" alt="" />Kayıt Sil</span>
+                        <img src="doc/img/gCons/recycle-full.png" alt="" />Kayıt Sil</span>
             </h3>
             <button class="close" data-bs-dismiss="modal" id="EgitimDetayFormuGuncellemeModalCloseButton">
                 ×</button>
@@ -581,19 +580,19 @@
             var formId = $(this).attr("data-id");
 
             $('img.closeImage').each(function () {
-                $(this).attr("src", "/img/details_open.png");
+                $(this).attr("src", "doc/img/details_open.png");
                 $(this).attr("class", "openImage");
                 $(this).closest("tr").next().remove();
             });
             //$(this).closest("tr").after("<tr><td></td><td colspan = '999'></td></tr>");
-            $(this).attr("src", "/img/details_close.png");
+            $(this).attr("src", "doc/img/details_close.png");
             $(this).attr("class", "closeImage");
 
             GuncellemeGoruntule(this, formId);
         });
 
         $(document).on("click", "img.closeImage", function () {
-            $(this).attr("src", "/img/details_open.png");
+            $(this).attr("src", "doc/img/details_open.png");
             $(this).closest("tr").next().remove();
             $(this).attr("class", "openImage");
         });
@@ -625,9 +624,9 @@
                             "<td style='width: 50%; text-align: left;  vertical-align:middle;'>" + ((value.Aciklama == null) ? '-' : (value.Aciklama)) +
                                "<td style='width: 25%; text-align: left;  vertical-align:middle;'>" + ((value.OlusturanKullaniciTanim == null) ? '-' : (value.OlusturanKullaniciTanim)) +
                             "</td><td style='width: 10%; text-align: center; vertical-align:middle;'>" + ((value.OlusturulmaTarihi == null) ? '-' : ConvertDateWithTime(value.OlusturulmaTarihi)) +
-                            "</td><td style=' text-align: center'> <a data-bs-toggle='modal' data-bs-backdrop='static' title='Güncelle' data-id='" + value.Id + "' onclick='EgitimDetayFormuGuncelleme(this);' href='#EgitimDetayFormuGuncellemeModal' style='padding-left: 8px; text-decoration:none;' data-islemtipi='kayitGuncelle'> <img src='../../img/gCons/edit.png' /></a>" +
-                            "<a data-bs-toggle='modal' data-bs-backdrop='static' title='Detay' data-id='" + value.Id + "'   onclick='EgitimDetayFormuGuncelleme(this);' href='#EgitimDetayFormuGuncellemeModal' style='padding-left: 8px; text-decoration:none;' data-islemtipi='kayitDetay'> <img src='../../img/gCons/addressbook.png' /></a>" +
-                            "<a data-bs-toggle='modal' data-bs-backdrop='static' title='Sil' data-id='" + value.Id + "'   onclick='EgitimDetayFormuGuncelleme(this);' href='#EgitimDetayFormuGuncellemeModal' style='padding-left: 8px; text-decoration:none;' data-islemtipi='kayitSil2'> <img src='../../img/gCons/recycle-full.png' /></a>"
+                            "</td><td style=' text-align: center'> <a data-bs-toggle='modal' data-bs-backdrop='static' title='Güncelle' data-id='" + value.Id + "' onclick='EgitimDetayFormuGuncelleme(this);' href='#EgitimDetayFormuGuncellemeModal' style='padding-left: 8px; text-decoration:none;' data-islemtipi='kayitGuncelle'> <img src='doc/img/gCons/edit.png' /></a>" +
+                            "<a data-bs-toggle='modal' data-bs-backdrop='static' title='Detay' data-id='" + value.Id + "'   onclick='EgitimDetayFormuGuncelleme(this);' href='#EgitimDetayFormuGuncellemeModal' style='padding-left: 8px; text-decoration:none;' data-islemtipi='kayitDetay'> <img src='doc/img/gCons/addressbook.png' /></a>" +
+                            "<a data-bs-toggle='modal' data-bs-backdrop='static' title='Sil' data-id='" + value.Id + "'   onclick='EgitimDetayFormuGuncelleme(this);' href='#EgitimDetayFormuGuncellemeModal' style='padding-left: 8px; text-decoration:none;' data-islemtipi='kayitSil2'> <img src='doc/img/gCons/recycle-full.png' /></a>"
                             + "</td></tr>");
                     });
                     //Footerda talimata ait yapılacak butonlar oluşturulur, en son talimata göre bu butonlar oluşturulur.
